@@ -6,7 +6,7 @@
 <h1 align="center">DGNS Pocket Garage</h1>
 
 <p align="center">
-<img width="1024" height="1024" alt="DGNS Pocket Garage Icon" src="https://github.com/user-attachments/assets/705fc78b-1406-42b2-92ad-691b5a8bb2a3" />
+<img width="1024" height="1024" alt="" />
 </p>
 
 <p align="center">
@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="icon.png" width="220"/>
+  <img src="[icon.png](https://github.com/user-attachments/assets/705fc78b-1406-42b2-92ad-691b5a8bb2a3)" width="220"/>
 </p>
 
 ---
