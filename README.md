@@ -5,6 +5,8 @@
 
 <h1 align="center">DGNS Pocket Garage</h1>
 
+https://s13.gifyu.com/images/bmZkC.gif
+
 <p align="center">
   <em>
     An open-source AR vehicle scanner Lens for Snap Spectacles, allowing users to scan real vehicles,
@@ -21,12 +23,13 @@
 ## Overview
 
 **DGNS Pocket Garage** is an open-source Lens project designed for **Snap Spectacles**.  
-It provides a complete gameplay loop to scan vehicles in the real world, generate collectible cards, and build a persistent AR garage.
+It provides a complete gameplay loop to scan vehicles in the real world, generate collectible cards, build a persistent AR garage around yout wrist and trade cards with other players 
+in collocated connected lens session.
 
 The project is intended as:
 - a **technical reference**
 - a **creative playground**
-- and a **starting point** for custom Spectacles automotive/gameified experiences
+- and a **starting point** for custom Spectacles spotting/collecting/gameified experiences
 
 Users are responsible for respectful and lawful use of scanned content and cloud features.
 
@@ -56,7 +59,7 @@ Users are responsible for respectful and lawful use of scanned content and cloud
 
 ## Requirements
 
-- **Lens Studio** (latest recommended)
+- **Lens Studio** 
 - **Snap Spectacles** device for deployment/testing
 - Internet access for cloud and multiplayer features
 - Valid Snap Cloud / Supabase configuration for online features
