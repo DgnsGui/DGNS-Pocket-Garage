@@ -5,7 +5,7 @@
 
 <h1 align="center">DGNS Pocket Garage</h1>
 
-![preview](https://s13.gifyu.com/images/bmZkC.gif)
+![preview]([https://s13.gifyu.com/images/bmZkC.gif](https://s13.gifyu.com/images/bmZkC.gif))
 
 <p align="center">
   <em>
