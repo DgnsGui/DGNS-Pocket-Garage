@@ -6,7 +6,7 @@
 <h1 align="center">DGNS Pocket Garage</h1>
 
 <p align="center">
-  <img src="[https://i.imgur.com/XdCUV61.gif](https://d1p1y5pyxk2k6i.cloudfront.net/4st1l%2Fpreview%2F76564864%2Fmain_large.gif?response-content-disposition=inline%3Bfilename%3D%22main_large.gif%22%3B&response-content-type=image%2Fgif&Expires=1774469522&Signature=AQJrTg41Zz8ltz0z7adgGjH3cSjd-Y60X89TikErFZQ1HnWlVptpIibDDM45pqVVmKa6DDYp3fdQhqhVgh-HMa0Bv8c9-JymmkCIS0HkUxK3fumw-~otg~tVnQk9uurkDlQLOLW9cYjDTVxYmypZfVNKGRWeEF5srmDCi3wgH2py0QM7i71NGk5y6HqRa-~c~lVmM89rv2LMmA-sQlysEKC2dbISZv~xV7PODpQbwFYvJtadGEEOnkDPNiikNhB8rFslPxFBl66nCe3E28wVM7cMM3OxmY2AWhVAQKjOvKO6b0feHn9Bvl1cNrKbBknQ4JLK1amdqo9GVUZRkPCclA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ)" width="600">
+<img width="1024" height="1024" alt="DGNS Pocket Garage Icon" src="https://github.com/user-attachments/assets/705fc78b-1406-42b2-92ad-691b5a8bb2a3" />
 </p>
 
 <p align="center">
