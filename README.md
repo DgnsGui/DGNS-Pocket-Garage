@@ -6,7 +6,7 @@
 <h1 align="center">DGNS Pocket Garage</h1>
 
 <p align="center">
-  <img src="[https://s13.gifyu.com/images/bmZkC.gif](https://imgur.com/a/hZccldT)" />
+  <img src="https://i.imgur.com/T1VM9My.gif" />
 </p>
 
 <p align="center">
