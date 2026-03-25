@@ -1,0 +1,1173 @@
+- !<AnimationLayer/e6d874b4-b3f9-4214-99d1-d761ca8b947d>
+  PackagePath: ""
+  BlendMode: Default
+  ScaleMode: Multiply
+  Positions:
+    []
+  Rotations:
+    []
+  Scales:
+    []
+  VertexCacheAnimations:
+    []
+  Visibilities:
+    []
+  BlendShapeAnimations:
+    Morph Target0:
+      - time: 0.000000
+        value: 1.000000
+      - time: 0.041667
+        value: 1.000000
+      - time: 0.083333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target1:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.041667
+        value: 0.000000
+      - time: 0.083333
+        value: 1.000000
+      - time: 0.125000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target10:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.416667
+        value: 0.000000
+      - time: 0.458333
+        value: 1.000000
+      - time: 0.500000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target100:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.166667
+        value: 0.000000
+      - time: 4.208333
+        value: 1.000000
+      - time: 4.250000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target101:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.208333
+        value: 0.000000
+      - time: 4.250000
+        value: 1.000000
+      - time: 4.291667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target102:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.250000
+        value: 0.000000
+      - time: 4.291667
+        value: 1.000000
+      - time: 4.333333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target103:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.291667
+        value: 0.000000
+      - time: 4.333333
+        value: 1.000000
+      - time: 4.375000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target104:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.333333
+        value: 0.000000
+      - time: 4.375000
+        value: 1.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target105:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.375000
+        value: 0.000000
+      - time: 4.416667
+        value: 1.000000
+    Morph Target11:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.458333
+        value: 0.000000
+      - time: 0.500000
+        value: 1.000000
+      - time: 0.541667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target12:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.500000
+        value: 0.000000
+      - time: 0.541667
+        value: 1.000000
+      - time: 0.583333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target13:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.541667
+        value: 0.000000
+      - time: 0.583333
+        value: 1.000000
+      - time: 0.625000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target14:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.583333
+        value: 0.000000
+      - time: 0.625000
+        value: 1.000000
+      - time: 0.666667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target15:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.625000
+        value: 0.000000
+      - time: 0.666667
+        value: 1.000000
+      - time: 0.708333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target16:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.666667
+        value: 0.000000
+      - time: 0.708333
+        value: 1.000000
+      - time: 0.750000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target17:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.708333
+        value: 0.000000
+      - time: 0.750000
+        value: 1.000000
+      - time: 0.791667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target18:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.750000
+        value: 0.000000
+      - time: 0.791667
+        value: 1.000000
+      - time: 0.833333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target19:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.791667
+        value: 0.000000
+      - time: 0.833333
+        value: 1.000000
+      - time: 0.875000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target2:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.083333
+        value: 0.000000
+      - time: 0.125000
+        value: 1.000000
+      - time: 0.166667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target20:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.833333
+        value: 0.000000
+      - time: 0.875000
+        value: 1.000000
+      - time: 0.916667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target21:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.875000
+        value: 0.000000
+      - time: 0.916667
+        value: 1.000000
+      - time: 0.958333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target22:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.916667
+        value: 0.000000
+      - time: 0.958333
+        value: 1.000000
+      - time: 1.000000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target23:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.958333
+        value: 0.000000
+      - time: 1.000000
+        value: 1.000000
+      - time: 1.041667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target24:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.000000
+        value: 0.000000
+      - time: 1.041667
+        value: 1.000000
+      - time: 1.083333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target25:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.041667
+        value: 0.000000
+      - time: 1.083333
+        value: 1.000000
+      - time: 1.125000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target26:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.083333
+        value: 0.000000
+      - time: 1.125000
+        value: 1.000000
+      - time: 1.166667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target27:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.125000
+        value: 0.000000
+      - time: 1.166667
+        value: 1.000000
+      - time: 1.208333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target28:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.166667
+        value: 0.000000
+      - time: 1.208333
+        value: 1.000000
+      - time: 1.250000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target29:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.208333
+        value: 0.000000
+      - time: 1.250000
+        value: 1.000000
+      - time: 1.291667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target3:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.125000
+        value: 0.000000
+      - time: 0.166667
+        value: 1.000000
+      - time: 0.208333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target30:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.250000
+        value: 0.000000
+      - time: 1.291667
+        value: 1.000000
+      - time: 1.333333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target31:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.291667
+        value: 0.000000
+      - time: 1.333333
+        value: 1.000000
+      - time: 1.375000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target32:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.333333
+        value: 0.000000
+      - time: 1.375000
+        value: 1.000000
+      - time: 1.416667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target33:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.375000
+        value: 0.000000
+      - time: 1.416667
+        value: 1.000000
+      - time: 1.458333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target34:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.416667
+        value: 0.000000
+      - time: 1.458333
+        value: 1.000000
+      - time: 1.500000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target35:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.458333
+        value: 0.000000
+      - time: 1.500000
+        value: 1.000000
+      - time: 1.541667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target36:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.500000
+        value: 0.000000
+      - time: 1.541667
+        value: 1.000000
+      - time: 1.583333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target37:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.541667
+        value: 0.000000
+      - time: 1.583333
+        value: 1.000000
+      - time: 1.625000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target38:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.583333
+        value: 0.000000
+      - time: 1.625000
+        value: 1.000000
+      - time: 1.666667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target39:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.625000
+        value: 0.000000
+      - time: 1.666667
+        value: 1.000000
+      - time: 1.708333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target4:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.166667
+        value: 0.000000
+      - time: 0.208333
+        value: 1.000000
+      - time: 0.250000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target40:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.666667
+        value: 0.000000
+      - time: 1.708333
+        value: 1.000000
+      - time: 1.750000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target41:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.708333
+        value: 0.000000
+      - time: 1.750000
+        value: 1.000000
+      - time: 1.791667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target42:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.750000
+        value: 0.000000
+      - time: 1.791667
+        value: 1.000000
+      - time: 1.833333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target43:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.791667
+        value: 0.000000
+      - time: 1.833333
+        value: 1.000000
+      - time: 1.875000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target44:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.833333
+        value: 0.000000
+      - time: 1.875000
+        value: 1.000000
+      - time: 1.916667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target45:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.875000
+        value: 0.000000
+      - time: 1.916667
+        value: 1.000000
+      - time: 1.958333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target46:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.916667
+        value: 0.000000
+      - time: 1.958333
+        value: 1.000000
+      - time: 2.000000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target47:
+      - time: 0.000000
+        value: 0.000000
+      - time: 1.958333
+        value: 0.000000
+      - time: 2.000000
+        value: 1.000000
+      - time: 2.041667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target48:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.000000
+        value: 0.000000
+      - time: 2.041667
+        value: 1.000000
+      - time: 2.083333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target49:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.041667
+        value: 0.000000
+      - time: 2.083333
+        value: 1.000000
+      - time: 2.125000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target5:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.208333
+        value: 0.000000
+      - time: 0.250000
+        value: 1.000000
+      - time: 0.291667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target50:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.083333
+        value: 0.000000
+      - time: 2.125000
+        value: 1.000000
+      - time: 2.166667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target51:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.125000
+        value: 0.000000
+      - time: 2.166667
+        value: 1.000000
+      - time: 2.208333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target52:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.166667
+        value: 0.000000
+      - time: 2.208333
+        value: 1.000000
+      - time: 2.250000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target53:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.208333
+        value: 0.000000
+      - time: 2.250000
+        value: 1.000000
+      - time: 2.291667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target54:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.250000
+        value: 0.000000
+      - time: 2.291667
+        value: 1.000000
+      - time: 2.333333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target55:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.291667
+        value: 0.000000
+      - time: 2.333333
+        value: 1.000000
+      - time: 2.375000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target56:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.333333
+        value: 0.000000
+      - time: 2.375000
+        value: 1.000000
+      - time: 2.416667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target57:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.375000
+        value: 0.000000
+      - time: 2.416667
+        value: 1.000000
+      - time: 2.458333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target58:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.416667
+        value: 0.000000
+      - time: 2.458333
+        value: 1.000000
+      - time: 2.500000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target59:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.458333
+        value: 0.000000
+      - time: 2.500000
+        value: 1.000000
+      - time: 2.541667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target6:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.250000
+        value: 0.000000
+      - time: 0.291667
+        value: 1.000000
+      - time: 0.333333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target60:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.500000
+        value: 0.000000
+      - time: 2.541667
+        value: 1.000000
+      - time: 2.583333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target61:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.541667
+        value: 0.000000
+      - time: 2.583333
+        value: 1.000000
+      - time: 2.625000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target62:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.583333
+        value: 0.000000
+      - time: 2.625000
+        value: 1.000000
+      - time: 2.666667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target63:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.625000
+        value: 0.000000
+      - time: 2.666667
+        value: 1.000000
+      - time: 2.708333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target64:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.666667
+        value: 0.000000
+      - time: 2.708333
+        value: 1.000000
+      - time: 2.750000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target65:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.708333
+        value: 0.000000
+      - time: 2.750000
+        value: 1.000000
+      - time: 2.791667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target66:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.750000
+        value: 0.000000
+      - time: 2.791667
+        value: 1.000000
+      - time: 2.833333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target67:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.791667
+        value: 0.000000
+      - time: 2.833333
+        value: 1.000000
+      - time: 2.875000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target68:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.833333
+        value: 0.000000
+      - time: 2.875000
+        value: 1.000000
+      - time: 2.916667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target69:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.875000
+        value: 0.000000
+      - time: 2.916667
+        value: 1.000000
+      - time: 2.958333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target7:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.291667
+        value: 0.000000
+      - time: 0.333333
+        value: 1.000000
+      - time: 0.375000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target70:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.916667
+        value: 0.000000
+      - time: 2.958333
+        value: 1.000000
+      - time: 3.000000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target71:
+      - time: 0.000000
+        value: 0.000000
+      - time: 2.958333
+        value: 0.000000
+      - time: 3.000000
+        value: 1.000000
+      - time: 3.041667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target72:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.000000
+        value: 0.000000
+      - time: 3.041667
+        value: 1.000000
+      - time: 3.083333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target73:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.041667
+        value: 0.000000
+      - time: 3.083333
+        value: 1.000000
+      - time: 3.125000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target74:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.083333
+        value: 0.000000
+      - time: 3.125000
+        value: 1.000000
+      - time: 3.166667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target75:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.125000
+        value: 0.000000
+      - time: 3.166667
+        value: 1.000000
+      - time: 3.208333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target76:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.166667
+        value: 0.000000
+      - time: 3.208333
+        value: 1.000000
+      - time: 3.250000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target77:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.208333
+        value: 0.000000
+      - time: 3.250000
+        value: 1.000000
+      - time: 3.291667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target78:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.250000
+        value: 0.000000
+      - time: 3.291667
+        value: 1.000000
+      - time: 3.333333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target79:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.291667
+        value: 0.000000
+      - time: 3.333333
+        value: 1.000000
+      - time: 3.375000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target8:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.333333
+        value: 0.000000
+      - time: 0.375000
+        value: 1.000000
+      - time: 0.416667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target80:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.333333
+        value: 0.000000
+      - time: 3.375000
+        value: 1.000000
+      - time: 3.416667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target81:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.375000
+        value: 0.000000
+      - time: 3.416667
+        value: 1.000000
+      - time: 3.458333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target82:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.416667
+        value: 0.000000
+      - time: 3.458333
+        value: 1.000000
+      - time: 3.500000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target83:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.458333
+        value: 0.000000
+      - time: 3.500000
+        value: 1.000000
+      - time: 3.541667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target84:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.500000
+        value: 0.000000
+      - time: 3.541667
+        value: 1.000000
+      - time: 3.583333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target85:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.541667
+        value: 0.000000
+      - time: 3.583333
+        value: 1.000000
+      - time: 3.625000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target86:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.583333
+        value: 0.000000
+      - time: 3.625000
+        value: 1.000000
+      - time: 3.666667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target87:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.625000
+        value: 0.000000
+      - time: 3.666667
+        value: 1.000000
+      - time: 3.708333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target88:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.666667
+        value: 0.000000
+      - time: 3.708333
+        value: 1.000000
+      - time: 3.750000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target89:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.708333
+        value: 0.000000
+      - time: 3.750000
+        value: 1.000000
+      - time: 3.791667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target9:
+      - time: 0.000000
+        value: 0.000000
+      - time: 0.375000
+        value: 0.000000
+      - time: 0.416667
+        value: 1.000000
+      - time: 0.458333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target90:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.750000
+        value: 0.000000
+      - time: 3.791667
+        value: 1.000000
+      - time: 3.833333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target91:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.791667
+        value: 0.000000
+      - time: 3.833333
+        value: 1.000000
+      - time: 3.875000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target92:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.833333
+        value: 0.000000
+      - time: 3.875000
+        value: 1.000000
+      - time: 3.916667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target93:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.875000
+        value: 0.000000
+      - time: 3.916667
+        value: 1.000000
+      - time: 3.958333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target94:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.916667
+        value: 0.000000
+      - time: 3.958333
+        value: 1.000000
+      - time: 4.000000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target95:
+      - time: 0.000000
+        value: 0.000000
+      - time: 3.958333
+        value: 0.000000
+      - time: 4.000000
+        value: 1.000000
+      - time: 4.041667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target96:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.000000
+        value: 0.000000
+      - time: 4.041667
+        value: 1.000000
+      - time: 4.083333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target97:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.041667
+        value: 0.000000
+      - time: 4.083333
+        value: 1.000000
+      - time: 4.125000
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target98:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.083333
+        value: 0.000000
+      - time: 4.125000
+        value: 1.000000
+      - time: 4.166667
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000
+    Morph Target99:
+      - time: 0.000000
+        value: 0.000000
+      - time: 4.125000
+        value: 0.000000
+      - time: 4.166667
+        value: 1.000000
+      - time: 4.208333
+        value: 0.000000
+      - time: 4.416667
+        value: 0.000000

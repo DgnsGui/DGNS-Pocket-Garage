@@ -1,0 +1,17 @@
+- !<AnimationMixerLayer/6fc56bbd-d612-43b2-b42a-d85982002883>
+  PackagePath: ""
+  Layer: KeyAction
+  Name: KeyAction
+  Weight: 1.000000
+  SpeedRatio: 1.000000
+  From: 0.000000
+  To: 4.416667
+  Offset: 0.000000
+  FPS: 30.000000
+  NumCycles: -1
+  Reversed: false
+  Disabled: false
+  PostInfinity: Cycle
+  BlendMode: Default
+  ScaleMode: Multiply
+  RangeType: TimeInSeconds

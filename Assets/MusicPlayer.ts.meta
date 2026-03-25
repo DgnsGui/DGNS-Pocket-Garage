@@ -1,0 +1,75 @@
+- !<AssetImportMetadata/b961ed0f-cedd-488c-bf9f-7f09ce1b33b5>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 14ee4395-1e03-4a70-af4b-c6bdda5b7961
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 14ee4395-1e03-4a70-af4b-c6bdda5b7961
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> f7f7ee95-5d35-4818-a4bc-69437b6f1c1a
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/f7f7ee95-5d35-4818-a4bc-69437b6f1c1a>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 805a9368-b262-4463-94a2-fbc21d7f2f05
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    audioPlayer: false
+    autoPlay: false
+    loopPlaylist: false
+    narratorDuckMultiplier: false
+    nextTrackButton: false
+    playPauseButton: false
+    playPauseText: false
+    prevTrackButton: false
+    trackNameText: false
+    tracks: false
+    volume: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - tracks: !<reference.AudioTrackAsset[]>
+        []
+      audioPlayer: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      playPauseButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      prevTrackButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      nextTrackButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      playPauseText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      trackNameText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      autoPlay: true
+      loopPlaylist: true
+      volume: 0.500000
+      narratorDuckMultiplier: 0.500000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input Asset.AudioTrackAsset[] tracks {"hint":"Array of AudioTrackAsset to use as playlist"}'
+    - '// @input Component.AudioComponent audioPlayer {"hint":"AudioComponent dedicated to music playback"}'
+    - '// @input SceneObject playPauseButton {"hint":"\"Play/Pause Button\" SceneObject (with RectangleButton/BaseButton)"}'
+    - '// @input SceneObject prevTrackButton {"hint":"\"Previous Track Button\" SceneObject (with RectangleButton/BaseButton)"}'
+    - '// @input SceneObject nextTrackButton {"hint":"\"Next Track Button\" SceneObject (with RectangleButton/BaseButton)"}'
+    - '// @input Component.Text playPauseText {"hint":"Text element under Play/Pause button to show play/pause emoji icon"}'
+    - '// @input Component.Text trackNameText {"hint":"Text element to display current track name (optional)"}'
+    - '// @input bool autoPlay = true {"hint":"Auto-play first track on start"}'
+    - '// @input bool loopPlaylist = true {"hint":"Loop playlist when reaching the end"}'
+    - '// @input float volume = 0.5 {"hint":"Music volume (0.0 to 1.0)"}'
+    - '// @input float narratorDuckMultiplier = 0.5 {"hint":"Volume multiplier while narrator speaks (0.5 = 50%)"}'

@@ -1,0 +1,37 @@
+- !<NativePackageDescriptor/7aba3ff4-5365-49ab-8412-cb11e1dc882c>
+  PackagePath: ""
+  StudioVersion:
+    major: 5
+    minor: 15
+    patch: 0
+    build: 25101318
+    type: Unset
+    buildFlavor: ""
+    timestamp: 0
+    commit: ""
+  Description: "Disintegrate Material This material can be used to dissolve or reveal your 3d model, comes with customizable colors and frequency controls, also takes one click to animate it."
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  VersionMajor: 1
+  VersionMinor: 0
+  VersionPatch: 0
+  UpdateCheckpoint: 76
+  ExportUid: 8e51c81c-0ad4-402e-b9e3-5b1cc271b2a3
+  ComponentUid: 71fd7951-10e8-431e-8242-db9123013bbc
+  PackagePolicy: CanBeUnpackedTransparent
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
+  AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure>
+    Name: ""
+    AssetId: ""
+    Hash: ""
+    Version:
+      major: 0
+      minor: 0
+      patch: 0
+      build: 0

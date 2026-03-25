@@ -1,0 +1,80 @@
+- !<AssetImportMetadata/e3e89cb1-798b-4926-9cc6-59afbb8901ad>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 9c58691f-9f44-45ed-bfea-33564cb7f287
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 9c58691f-9f44-45ed-bfea-33564cb7f287
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> aee00b5c-4045-4e05-b784-3d6d07c24d4e
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/aee00b5c-4045-4e05-b784-3d6d07c24d4e>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 810e0f45-ac8b-45bd-8b85-719369bcf58c
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    acceptButton: false
+    acceptButtonText: false
+    connectedLensButton: false
+    connectedLensButtonText: false
+    languageButtonEN: false
+    languageButtonES: false
+    languageButtonFR: false
+    languageContainer: false
+    soloButton: false
+    soloButtonText: false
+    welcomeContainer: false
+    welcomeDescriptionText: false
+    welcomeTitleText: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - languageContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      acceptButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      acceptButtonText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      languageButtonFR: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      languageButtonEN: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      languageButtonES: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      welcomeContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      welcomeTitleText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      welcomeDescriptionText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      soloButtonText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      connectedLensButtonText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      soloButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      connectedLensButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject languageContainer {"hint":"\"Language Container\" SceneObject — shown first at launch for language selection"}'
+    - '// @input SceneObject acceptButton {"hint":"\"Accept CapsuleButton\" SceneObject inside Language Container"}'
+    - '// @input Component.Text acceptButtonText {"hint":"Text component of the Accept button label (child of Accept CapsuleButton)"}'
+    - '// @input SceneObject languageButtonFR {"hint":"\"Language Button FR\" SceneObject"}'
+    - '// @input SceneObject languageButtonEN {"hint":"\"Language Button EN\" SceneObject"}'
+    - '// @input SceneObject languageButtonES {"hint":"\"Language Button ES\" SceneObject"}'
+    - '// @input SceneObject welcomeContainer {"hint":"\"Welcome Container\" root SceneObject — shown after language is accepted"}'
+    - '// @input Component.Text welcomeTitleText {"hint":"Title Text component in Welcome Container (\"DGNS Pocket Garage\")"}'
+    - '// @input Component.Text welcomeDescriptionText {"hint":"Description Text component in Welcome Container"}'
+    - '// @input Component.Text soloButtonText {"hint":"Text component inside Solo CapsuleButton"}'
+    - '// @input Component.Text connectedLensButtonText {"hint":"Text component inside Connected Lens CapsuleButton"}'
+    - '// @input SceneObject soloButton {"hint":"\"Solo CapsuleButton\" SceneObject — starts solo mode"}'
+    - '// @input SceneObject connectedLensButton {"hint":"\"Connected Lens CapsuleButton\" SceneObject — starts connected lens mode (Phase 2)"}'

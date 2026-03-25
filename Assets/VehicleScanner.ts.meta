@@ -1,0 +1,74 @@
+- !<AssetImportMetadata/3e4be835-a9d2-48b7-bfed-ce9df004de3e>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> f145e252-9525-44a5-9464-46f8ff5aed9c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> f145e252-9525-44a5-9464-46f8ff5aed9c
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 6812a4c2-c398-4b9f-9899-80dca8de9e06
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/6812a4c2-c398-4b9f-9899-80dca8de9e06>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: b80d5ae2-6cb2-4163-9a3e-b47bed347da2
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cameraFrameImage: false
+    captureSoundAsset: false
+    captureSoundPlayer: false
+    cardBaseScale: false
+    cardMaxScale: false
+    cardMinScale: false
+    cardOffsetX: false
+    cardOffsetY: false
+    cardOffsetZ: false
+    enableAntiCheat: false
+    vehicleCard: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - cameraFrameImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      captureSoundAsset: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      captureSoundPlayer: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      vehicleCard: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      cardOffsetX: !<float> 0.000000
+      cardOffsetY: !<float> 80.000000
+      cardOffsetZ: !<float> 0.000000
+      cardBaseScale: !<float> 2.000000
+      cardMinScale: 1.500000
+      cardMaxScale: !<float> 4.000000
+      enableAntiCheat: true
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input Component.Image cameraFrameImage {"hint":"\"Camera Frame Photo\" Image in Car Scan Interface (shows live preview + freeze frame)"}'
+    - '// @input Asset.AudioTrackAsset captureSoundAsset {"hint":"AudioTrackAsset for the camera shutter/capture sound effect"}'
+    - '// @input Component.AudioComponent captureSoundPlayer {"hint":"AudioComponent to play the capture sound"}'
+    - '// @input SceneObject vehicleCard {"hint":"Vehicle Card SceneObject — used for depth-based 3D positioning"}'
+    - '// @input float cardOffsetX {"hint":"X offset from vehicle (cm)"}'
+    - '// @input float cardOffsetY = 80 {"hint":"Y offset above vehicle (cm, height above roof)"}'
+    - '// @input float cardOffsetZ {"hint":"Z offset from vehicle (cm)"}'
+    - '// @input float cardBaseScale = 2 {"hint":"Base scale of Vehicle Card (recommended: 2)"}'
+    - '// @input float cardMinScale = 1.5 {"hint":"Minimum card scale (recommended: 1.5)"}'
+    - '// @input float cardMaxScale = 4 {"hint":"Maximum card scale (recommended: 4)"}'
+    - '// @input bool enableAntiCheat = true {"hint":"Enable anti-cheat detection (rejects screens, photos, prints). Disable for testing with TV/monitor."}'

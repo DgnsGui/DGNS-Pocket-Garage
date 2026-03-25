@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/64d04bc3-4f56-4ac3-9fbe-43b249cf98c9>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 0a982e1c-10ce-4845-8221-a57b25042c24
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 0a982e1c-10ce-4845-8221-a57b25042c24
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 3a4de0a0-3c5f-47b0-b295-7aab7ee3dda2
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/3a4de0a0-3c5f-47b0-b295-7aab7ee3dda2>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: ca9368bf-04e0-4bad-bcf3-16cd90a8e705
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    runTests: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - runTests: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input bool runTests {"hint":"Enable to run all unit tests on startup. Disable in production."}'

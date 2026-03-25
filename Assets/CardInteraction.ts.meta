@@ -1,0 +1,86 @@
+- !<AssetImportMetadata/b841a77c-eb28-456d-b12f-60cb1848e4ce>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> fbae7ca3-a168-402f-881b-fa6523ac56a4
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> fbae7ca3-a168-402f-881b-fa6523ac56a4
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 640553d5-1414-4e43-9cda-eb6e52a4d34f
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/640553d5-1414-4e43-9cda-eb6e52a4d34f>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: db6f7c06-ce03-4464-a5ff-e46b0f59f2f2
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cardCollectionContainer: false
+    carouselHideThreshold: false
+    carouselRadius: false
+    carouselSwipeSensitivity: false
+    collectionCardScale: false
+    enablePinchGrabAssist: false
+    invertCarouselSwipeDirection: false
+    leftPalmAnchor: false
+    pickedCardScale: false
+    pinchBlockSwipeDistanceCm: false
+    pinchGrabRadiusCm: false
+    pinchReleaseDistanceCm: false
+    pinchStartDistanceCm: false
+    rightIndexTip: false
+    rightThumbTip: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - rightIndexTip: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      rightThumbTip: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      cardCollectionContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      leftPalmAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      collectionCardScale: 0.180000
+      pickedCardScale: 0.360000
+      carouselRadius: 2.500000
+      carouselSwipeSensitivity: !<float> 1.000000
+      pinchBlockSwipeDistanceCm: 3.500000
+      invertCarouselSwipeDirection: false
+      enablePinchGrabAssist: true
+      pinchStartDistanceCm: 2.200000
+      pinchReleaseDistanceCm: 3.100000
+      pinchGrabRadiusCm: !<float> 9.000000
+      carouselHideThreshold: 0.300000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject rightIndexTip {"hint":"Right hand index finger tip SceneObject (index-3_end joint)"}'
+    - '// @input SceneObject rightThumbTip {"hint":"Right hand thumb tip SceneObject (thumb-3_end joint)"}'
+    - '// @input SceneObject cardCollectionContainer {"hint":"Card Collection Container — SceneObject under left wrist"}'
+    - '// @input SceneObject leftPalmAnchor {"hint":"Left palm anchor SceneObject (for fallback hand position)"}'
+    - '// @input float collectionCardScale = 0.18 {"hint":"Scale of cards inside the carousel (small). Default: 0.18"}'
+    - '// @input float pickedCardScale = 0.36 {"hint":"Scale of cards when picked / placed in world (big). Default: 0.36"}'
+    - '// @input float carouselRadius = 2.5 {"hint":"Minimum radius (cm) of the carousel circle. Default: 2.5"}'
+    - '// @input float carouselSwipeSensitivity = 1 {"hint":"Sensitivity of right-hand swipe to rotate carousel (0 = off, 1 = normal)"}'
+    - '// @input float pinchBlockSwipeDistanceCm = 6 {"hint":"Index–thumb distance (cm) below which swipe is blocked (pinch or near-pinch). Increase if carousel still rotates when approaching to grab."}'
+    - '// @input bool invertCarouselSwipeDirection {"hint":"If enabled, carousel only rotates counter-clockwise from swipe; otherwise clockwise only."}'
+    - '// @input bool enablePinchGrabAssist = true {"hint":"Enable pinch grab assist when Frame grab is hard to trigger"}'
+    - '// @input float pinchStartDistanceCm = 2.2 {"hint":"Pinch start distance (cm) between index and thumb"}'
+    - '// @input float pinchReleaseDistanceCm = 3.1 {"hint":"Pinch release distance (cm) between index and thumb"}'
+    - '// @input float pinchGrabRadiusCm = 9 {"hint":"Max distance (cm) from pinch center to card to start assist grab"}'
+    - '// @input float carouselHideThreshold = 0.5 {"hint":"Hide when sin(angle) < -this (0 = only fade, no hide). Higher = pop/depop further behind wrist. Default 0.5 ≈ ~20° extra hidden each side."}'

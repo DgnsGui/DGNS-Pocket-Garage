@@ -1,0 +1,107 @@
+- !<AssetImportMetadata/ecb81db4-8d12-4e6d-b99c-57ced667ed4d>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 1b195c18-eefc-4995-b33e-70a7c610f3bd
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 1b195c18-eefc-4995-b33e-70a7c610f3bd
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 1922c149-46d7-46e4-8bee-71fe5becbd88
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/1922c149-46d7-46e4-8bee-71fe5becbd88>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 35e1cfff-00d7-46c5-a43d-e408075759bd
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    brandLogoLoader: false
+    cardCollectionContainer: false
+    cardInteraction: false
+    confirmDeleteCancelButton: false
+    confirmDeleteContainer: false
+    confirmDeleteYesButton: false
+    confirmResetCancelButton: false
+    confirmResetProfileContainer: false
+    confirmResetYesButton: false
+    confirmShareCancelButton: false
+    confirmShareContainer: false
+    confirmShareYesButton: false
+    deleteCardButton: false
+    leftPalmAnchor: false
+    maxCollectionSize: false
+    openCollectionButton: false
+    openCollectionButtonText: false
+    resetCollectionButton: false
+    saveButton: false
+    shareCollectionButton: false
+    shareConfirmationText: false
+    verticalCardPrefab: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - saveButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      verticalCardPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      openCollectionButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      openCollectionButtonText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      leftPalmAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      cardCollectionContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      shareCollectionButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmShareContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmShareYesButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmShareCancelButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      shareConfirmationText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      resetCollectionButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmResetProfileContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmResetYesButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmResetCancelButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      deleteCardButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmDeleteContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmDeleteYesButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmDeleteCancelButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      brandLogoLoader: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      cardInteraction: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      maxCollectionSize: !<float> 25.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject saveButton {"hint":"\"Save\" button SceneObject on the Vehicle Card"}'
+    - '// @input Asset.ObjectPrefab verticalCardPrefab {"hint":"ObjectPrefab for the Vertical Collector Card template"}'
+    - '// @input SceneObject openCollectionButton {"hint":"\"Open Collection\" PinchButton SceneObject on the wrist"}'
+    - '// @input Component.Text openCollectionButtonText {"hint":"Text component on the Open Collection button (toggles \"Open\" / \"Close\")"}'
+    - '// @input SceneObject leftPalmAnchor {"hint":"Left palm anchor SceneObject (tracks the left palm center)"}'
+    - '// @input SceneObject cardCollectionContainer {"hint":"Card Collection Container — SceneObject under Left Hand Wrist"}'
+    - '// @input SceneObject shareCollectionButton {"hint":"\"Share Collection\" button on left hand (inside User Card Info)"}'
+    - '// @input SceneObject confirmShareContainer {"hint":"\"Confirm Share Container\" with confirmation text, URL text, Yes/Cancel buttons"}'
+    - '// @input SceneObject confirmShareYesButton {"hint":"\"Yes CapsuleButton\" inside Confirm Share Container"}'
+    - '// @input SceneObject confirmShareCancelButton {"hint":"\"Cancel CapsuleButton\" inside Confirm Share Container"}'
+    - '// @input Component.Text shareConfirmationText {"hint":"\"Collection Shared Confirmation\" Text — displays the URL after sharing"}'
+    - '// @input SceneObject resetCollectionButton {"hint":"\"Reset Profile\" button inside User Card Info"}'
+    - '// @input SceneObject confirmResetProfileContainer {"hint":"\"Confirm Reset Profile\" container with Yes/Cancel buttons"}'
+    - '// @input SceneObject confirmResetYesButton {"hint":"\"Yes\" button inside Confirm Reset Profile Container"}'
+    - '// @input SceneObject confirmResetCancelButton {"hint":"\"Cancel\" button inside Confirm Reset Profile Container"}'
+    - '// @input SceneObject deleteCardButton {"hint":"\"Delete Card\" button on left hand"}'
+    - '// @input SceneObject confirmDeleteContainer {"hint":"\"Confirm Delete Card\" container with Yes/Cancel buttons"}'
+    - '// @input SceneObject confirmDeleteYesButton {"hint":"\"Yes\" button inside Confirm Delete Container"}'
+    - '// @input SceneObject confirmDeleteCancelButton {"hint":"\"Cancel\" button inside Confirm Delete Container"}'
+    - '// @input AssignableType brandLogoLoader {"hint":"BrandLogoLoader script reference (for loading logos onto collector cards)"}'
+    - '// @input AssignableType_1 cardInteraction {"hint":"CardInteraction script reference (handles grab/release, auto-rotation, lerp)"}'
+    - '// @input float maxCollectionSize = 25 {"hint":"Maximum number of cards in collection. Default: 25. Increase for premium users."}'

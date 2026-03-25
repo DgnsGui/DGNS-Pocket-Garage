@@ -1,0 +1,95 @@
+- !<AssetImportMetadata/81838316-f452-4c2d-9831-8dace5f97976>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> aa291cd9-6854-4248-94f1-2fa26d26e43e
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> aa291cd9-6854-4248-94f1-2fa26d26e43e
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 802d470b-b3c1-4293-9989-974de2c460d5
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/802d470b-b3c1-4293-9989-974de2c460d5>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: c705acfe-8a99-4fd1-8361-2582a7c43404
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    acknowledgeButton: false
+    levelBadge: false
+    levelBadgePadDigits: false
+    levelBadgeUrlTemplate: false
+    levelNumberText: false
+    levelUpBadgeReveal: false
+    levelUpBodyText: false
+    levelUpRevealHoldDuration: false
+    levelUpTitleText: false
+    prestigeButton: false
+    userCardButton: false
+    userCardInfo: false
+    userCardText: false
+    usernameText: false
+    xpBarParent: false
+    xpContainer: false
+    xpCounterText: false
+    xpDisplay: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - xpContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      levelNumberText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      xpCounterText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      xpBarParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      levelBadge: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      levelBadgeUrlTemplate: ""
+      levelBadgePadDigits: !<float> 2.000000
+      levelUpBadgeReveal: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      levelUpTitleText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      levelUpBodyText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      levelUpRevealHoldDuration: 2.600000
+      xpDisplay: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      userCardInfo: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      acknowledgeButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      userCardButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      prestigeButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      userCardText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      usernameText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject xpContainer {"hint":"XP Container SceneObject (above head — contains Level Badge, Level Number, XP counter, XP Bar)"}'
+    - '// @input Component.Text levelNumberText {"hint":"\"Level Number\" Text component inside XP Container"}'
+    - '// @input Component.Text xpCounterText {"hint":"\"XP counter\" Text component inside XP Container"}'
+    - '// @input SceneObject xpBarParent {"hint":"\"XP Bar\" parent SceneObject inside XP Container (contains 5 Plane children)"}'
+    - '// @input SceneObject levelBadge {"hint":"\"Level Badge\" SceneObject inside XP Container"}'
+    - '// @input string levelBadgeUrlTemplate {"hint":"Public URL template for level badge PNG. Use {level}. Example: https://.../level-badges/lvl-{level}.png"}'
+    - '// @input float levelBadgePadDigits = 2 {"hint":"Pad digits for {level} in badge URL template. Example: 2 => 01, 50"}'
+    - '// @input SceneObject levelUpBadgeReveal {"hint":"Optional reveal badge object shown in front of camera on level-up (Image or RenderMeshVisual)."}'
+    - '// @input Component.Text levelUpTitleText {"hint":"Optional Level Up title text (e.g. LEVEL UP!)."}'
+    - '// @input Component.Text levelUpBodyText {"hint":"Optional Level Up body text (e.g. from level X to Y)."}'
+    - '// @input float levelUpRevealHoldDuration = 2.6 {"hint":"Level-up popup hold duration in seconds (excluding fade-in/out)"}'
+    - '// @input Component.Text xpDisplay {"hint":"\"XP Display\" Text component attached to Camera Object (floating +XP popup)"}'
+    - '// @input SceneObject userCardInfo {"hint":"\"User Card Info\" SceneObject on the hand (contains Level Badge, Level Number, XP counter, XP Bar)"}'
+    - '// @input SceneObject acknowledgeButton {"hint":"\"Acknowledge button\" SceneObject inside User Card Info — closes the card"}'
+    - '// @input SceneObject userCardButton {"hint":"\"User Card Button\" SceneObject on the hand (toggles User Card Info)"}'
+    - '// @input SceneObject prestigeButton {"hint":"\"Prestige Button\" SceneObject inside User Card Info — only visible at max level"}'
+    - '// @input Component.Text userCardText {"hint":"\"User Card\" Text child inside User Card Button"}'
+    - '// @input Component.Text usernameText {"hint":"\"Username\" Text component inside XP Container (displays Snapchat display name)"}'

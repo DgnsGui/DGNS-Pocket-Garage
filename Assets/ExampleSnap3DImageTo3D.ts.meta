@@ -1,0 +1,78 @@
+- !<AssetImportMetadata/fd7bb49d-4a90-4a27-bd74-480c5d4223d4>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 5eb6c91f-001a-47a1-9661-1f9a6af9b7cc
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 5eb6c91f-001a-47a1-9661-1f9a6af9b7cc
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> a5fb84da-ec6c-47a3-8d4b-d1e1cd49e94a
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/a5fb84da-ec6c-47a3-8d4b-d1e1cd49e94a>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: eef12b02-4dbc-42f4-9238-006a110e90b5
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    baseMeshRoot: false
+    hintText: false
+    modelMat: false
+    prompt: false
+    refineMesh: false
+    refinedMeshRoot: false
+    runOnTap: false
+    sourceImage: false
+    sourceTexture: false
+    useVertexColor: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - sourceTexture: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      prompt: an object
+      refineMesh: true
+      useVertexColor: false
+      sourceImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      baseMeshRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      refinedMeshRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      modelMat: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      hintText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      runOnTap: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Text-to-3D Configuration</span>"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #94A3B8; font-size: 11px;\">Generate 3D models from text prompts with reference texture</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Generation Settings"}'
+    - '// @input Asset.Texture sourceTexture {"hint":"Source texture/image to use for generation"}'
+    - "// @input string prompt = \"an object\" {\"hint\":\"Prompt to describe the object (e.g., 'a toy car', 'a vase')\", \"widget\":\"text_area\"}"
+    - '// @input bool refineMesh = true {"hint":"Enable mesh refinement for higher quality (slower)"}'
+    - '// @input bool useVertexColor {"hint":"Use vertex colors instead of textures"}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Display Configuration</span>"}'
+    - '// @input Component.Image sourceImage {"hint":"Image component to display the source image"}'
+    - '// @input SceneObject baseMeshRoot {"hint":"Parent object for base mesh"}'
+    - '// @input SceneObject refinedMeshRoot {"hint":"Parent object for refined mesh"}'
+    - '// @input Asset.Material modelMat {"hint":"Material to apply to generated meshes"}'
+    - '// @input Component.Text hintText {"hint":"Text component for status messages"}'
+    - '// @input bool runOnTap {"hint":"Enable generation on tap/pinch"}'

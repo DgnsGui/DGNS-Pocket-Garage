@@ -1,0 +1,101 @@
+- !<AssetImportMetadata/1a25da55-9da3-4893-bdeb-138c6c22f266>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 0e4d2152-7f48-4a09-8b27-7179e14c7c3b
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 0e4d2152-7f48-4a09-8b27-7179e14c7c3b
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 2e435584-4866-4f1a-825f-77cd36c8eb97
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/2e435584-4866-4f1a-825f-77cd36c8eb97>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: dcdd5367-0e95-4771-984c-7c72ed720301
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    camDisplay: false
+    collectionRoot: false
+    colocationGuidanceText: false
+    confirmGiveCancelButton: false
+    confirmGiveContainer: false
+    confirmGiveText: false
+    confirmGiveYesButton: false
+    confirmTradeContainer: false
+    headDebugDepthOffset: false
+    headDebugHeightOffset: false
+    headDebugMesh: false
+    headDebugMeshCustom: false
+    headRotationOffset: false
+    remoteLevelBadgePadDigits: false
+    remoteLevelBadgeUrlTemplate: false
+    remotePlayerInfoContainer: false
+    verticalCardPrefab: false
+    worldMesh: false
+    wristAnchor: false
+    xpContainerHeightOffset: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - camDisplay: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      verticalCardPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      collectionRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      headDebugMesh: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      headDebugMeshCustom: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      headDebugHeightOffset: !<float> 0.000000
+      headDebugDepthOffset: !<float> 0.000000
+      confirmGiveContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmGiveYesButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmGiveCancelButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmGiveText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      confirmTradeContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      remotePlayerInfoContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      remoteLevelBadgeUrlTemplate: ""
+      remoteLevelBadgePadDigits: !<float> 2.000000
+      xpContainerHeightOffset: !<float> 25.000000
+      wristAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      worldMesh: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      headRotationOffset: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
+      colocationGuidanceText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject camDisplay {"hint":"Cam Display object under Camera Object — shown to remote players when scanning"}'
+    - '// @input Asset.ObjectPrefab verticalCardPrefab {"hint":"Vertical Collector Card prefab — same as CollectionManager"}'
+    - '// @input SceneObject collectionRoot {"hint":"Parent SceneObject for remote carousel cards (Remote Collection Root)"}'
+    - '// @input SceneObject headDebugMesh {"hint":"Head Debug Mesh — cube placed at remote player head position for testing"}'
+    - '// @input SceneObject headDebugMeshCustom {"hint":"Custom head mesh (e.g. different hat) — used only when local Snap username is GuillaumeDGNS"}'
+    - '// @input float headDebugHeightOffset {"hint":"Height offset (cm) for Head Debug Mesh / hat above remote head. Positive = higher. Default: 0"}'
+    - '// @input float headDebugDepthOffset {"hint":"Depth offset (cm) for Head Debug Mesh / hat along head forward axis. Positive = forward, negative = backward. Default: 0"}'
+    - '// @input SceneObject confirmGiveContainer {"hint":"Confirm Give Card container — shown when someone requests your card"}'
+    - '// @input SceneObject confirmGiveYesButton {"hint":"\"Yes\" button inside Confirm Give Card container"}'
+    - '// @input SceneObject confirmGiveCancelButton {"hint":"\"Cancel\" button inside Confirm Give Card container"}'
+    - '// @input Component.Text confirmGiveText {"hint":"Text component on Confirm Give Card — shows \"Give [card] to [player]?\""}'
+    - '// @input SceneObject confirmTradeContainer {"hint":"Confirm Trade Card container — shown when a trade is proposed"}'
+    - '// @input SceneObject remotePlayerInfoContainer {"hint":"XP Container — positioned above remote player head to show their level/prestige"}'
+    - '// @input string remoteLevelBadgeUrlTemplate {"hint":"Fallback public URL template for remote level badges. Use {level}. Example: https://.../level-badges/lvl-{level}.png"}'
+    - '// @input float remoteLevelBadgePadDigits = 2 {"hint":"Pad digits for {level} in remote badge URL template. Example: 2 => 01, 50"}'
+    - '// @input float xpContainerHeightOffset = 25 {"hint":"Height offset (cm) for the XP container above the remote player head. Default: 25. Lower = closer to head."}'
+    - '// @input SceneObject wristAnchor {"hint":"Left wrist anchor (Card Collection Container) — used to broadcast wrist position for remote carousel placement"}'
+    - '// @input SceneObject worldMesh {"hint":"World Mesh SceneObject — enabled during colocation scanning to visualize environment, disabled after"}'
+    - '// @input vec3 headRotationOffset {"hint":"Head rotation offset in degrees (X, Y, Z) — corrects mesh orientation vs camera. Default: (0, 180, 0). Adjust if hat appears upside down or sideways."}'
+    - '// @input Component.Text colocationGuidanceText {"hint":"Colocated Guidance Text — dedicated text element for colocation flow messages (child of Camera Object). Avoids conflicts with XP Display."}'

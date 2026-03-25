@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/5999f17e-f7e0-47ef-81ac-93612bd76d4d>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 309ae08f-e7c0-4bb3-a4a4-699895827e88
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 309ae08f-e7c0-4bb3-a4a4-699895827e88
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 2fd213f7-bd7c-4b25-b94a-609737ad7cd8
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/2fd213f7-bd7c-4b25-b94a-609737ad7cd8>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 34c774c5-6f42-405b-adc5-8e8f9464d5c9
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    snapCloudRequirements: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - snapCloudRequirements: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input AssignableType snapCloudRequirements {"hint":"SnapCloudRequirements script reference (holds SupabaseProject config)"}'

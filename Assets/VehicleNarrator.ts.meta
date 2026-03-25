@@ -1,0 +1,59 @@
+- !<AssetImportMetadata/d7af76dc-91fc-4d24-8daa-d7ee1952d397>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> f1a159b6-fba4-4794-a9e1-20a5d7c5d829
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> f1a159b6-fba4-4794-a9e1-20a5d7c5d829
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> fd93ce91-e276-4a8e-94b8-c6e7c149861f
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/fd93ce91-e276-4a8e-94b8-c6e7c149861f>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 83e8d0de-3fc6-4535-bb3d-9d5aebe70181
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    carDescriptionText: false
+    fetchInfoButton: false
+    muteButton: false
+    muteButtonText: false
+    statusText: false
+    ttsAudioPlayer: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - fetchInfoButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      carDescriptionText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      ttsAudioPlayer: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      muteButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      muteButtonText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      statusText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject fetchInfoButton {"hint":"\"Get More Info Button\" SceneObject (with RectangleButton)"}'
+    - '// @input Component.Text carDescriptionText {"hint":"\"Car Description Subtitles\" Text for narrative description"}'
+    - '// @input Component.AudioComponent ttsAudioPlayer {"hint":"AudioComponent for TTS playback"}'
+    - '// @input SceneObject muteButton {"hint":"\"Mute Button\" SceneObject (with RectangleButton/BaseButton)"}'
+    - '// @input Component.Text muteButtonText {"hint":"Text element under Mute Button to display mute/unmute icon"}'
+    - '// @input Component.Text statusText {"hint":"\"Loading\" Text component on Car Scan Interface — unified status text (idle phrases, scanning, errors)"}'

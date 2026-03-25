@@ -1,0 +1,358 @@
+- !<AssetImportMetadata/83bc9d83-919a-413a-80f7-4042d64c0b06>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 82941ba1-7412-467a-91f2-61589d3956f0
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 82941ba1-7412-467a-91f2-61589d3956f0
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> f9568e87-4aee-4fad-8967-16482d3b7e1e
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/0f0a9357-8802-4a73-6ab3-f013b7b57d77>
+  PrefabRemaps:
+    []
+  Name: Sketchfab_model
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: -90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> d98f0510-170b-4530-5303-9fb49a05271e
+  Components:
+    []
+- !<SceneObject/16a2f68f-66fb-4698-4fcf-c49fa233ffbb>
+  PrefabRemaps:
+    []
+  Name: Sketchfab_Scene
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 0f0a9357-8802-4a73-6ab3-f013b7b57d77
+  Components:
+    - !<own> 2c0b98c4-2e62-4d76-49c4-45b5d07002bd
+- !<AnimationMixer/2c0b98c4-2e62-4d76-49c4-45b5d07002bd>
+  PrefabRemaps:
+    []
+  Name: component_2
+  Enabled: true
+  Layers:
+    - !<reference> 6fc56bbd-d612-43b2-b42a-d85982002883
+  Autoplay: true
+  Version: FBX
+- !<Animation/3137f9a3-689e-434a-71b3-aae126a781cf>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  AnimationLayers:
+    KeyAction: !<reference> e6d874b4-b3f9-4214-99d1-d761ca8b947d
+- !<SceneObject/35febfad-b12b-4098-4326-ed4f37b7b816>
+  PrefabRemaps:
+    []
+  Name: Flag ShapeKeys_2_4
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> f74dcd2b-62a4-4784-4af2-b0fb6c6bbf86
+  Components:
+    []
+- !<SceneObject/59ff11b1-8953-40a5-7f43-eae6f9b0f618>
+  PrefabRemaps:
+    []
+  Name: RootNode (gltf orientation matrix)_0
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: -90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 84af7704-991b-4f36-402d-d0eabaabc4c7
+  Components:
+    []
+- !<SceneObject/66288f64-ada1-49ab-58f8-3bb1a21d351d>
+  PrefabRemaps:
+    []
+  Name: scene
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 100.000000, y: 100.000000, z: 100.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> ccc52071-a862-4569-624c-e6d365e65388
+  Components:
+    []
+- !<SceneObject/84af7704-991b-4f36-402d-d0eabaabc4c7>
+  PrefabRemaps:
+    []
+  Name: RootNode (model correction matrix)_1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> f5fe3355-3b9d-4621-65cd-d4847e587afd
+  Components:
+    []
+- !<SceneObject/ccc52071-a862-4569-624c-e6d365e65388>
+  PrefabRemaps:
+    []
+  Name: Scenes
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 16a2f68f-66fb-4698-4fcf-c49fa233ffbb
+  Components:
+    []
+- !<SceneObject/d2b147ae-324b-47fe-73cc-f07ed1f58ccc>
+  PrefabRemaps:
+    []
+  Name: GLTF_SceneRootNode_3
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 35febfad-b12b-4098-4326-ed4f37b7b816
+  Components:
+    []
+- !<SceneObject/d98f0510-170b-4530-5303-9fb49a05271e>
+  PrefabRemaps:
+    []
+  Name: root
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> f6c87bde-62c8-46bd-4e69-20a927842aa0
+  Components:
+    []
+- !<SceneObject/f5fe3355-3b9d-4621-65cd-d4847e587afd>
+  PrefabRemaps:
+    []
+  Name: root_2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> d2b147ae-324b-47fe-73cc-f07ed1f58ccc
+  Components:
+    []
+- !<SceneObject/f6c87bde-62c8-46bd-4e69-20a927842aa0>
+  PrefabRemaps:
+    []
+  Name: GLTF_SceneRootNode
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 59ff11b1-8953-40a5-7f43-eae6f9b0f618
+  Components:
+    []
+- !<SceneObject/f74dcd2b-62a4-4784-4af2-b0fb6c6bbf86>
+  PrefabRemaps:
+    []
+  Name: mesh_0_5
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> fa23e686-0afc-43d7-7486-6ee974fe5797
+  Components:
+    []
+- !<ObjectPrefabAssetData/f9568e87-4aee-4fad-8967-16482d3b7e1e>
+  Prototype: !<ObjectOwner/b8d6095d-89e7-4201-a393-a762c50c64c2>
+    PackagePath: ""
+    objects:
+      - !<own> 66288f64-ada1-49ab-58f8-3bb1a21d351d
+- !<SceneObject/fa23e686-0afc-43d7-7486-6ee974fe5797>
+  PrefabRemaps:
+    []
+  Name: mesh_0
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> fc4fbbdf-eb0c-41c0-55de-dfa47dcb68de
+    - !<own> 3137f9a3-689e-434a-71b3-aae126a781cf
+- !<RenderMeshVisual/fc4fbbdf-eb0c-41c0-55de-dfa47dcb68de>
+  PrefabRemaps:
+    []
+  Name: mesh_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 8c6dff2d-218f-4d5d-87a9-cfe8c9931cfc
+  Mesh: !<reference> c1b2a062-86d1-414c-9de8-10aa21200e75
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    Morph Target9: 0.000000
+    Morph Target8: 0.000000
+    Morph Target0: 0.000000
+    Morph Target1: 0.000000
+    Morph Target2: 0.000000
+    Morph Target3: 0.000000
+    Morph Target4: 0.000000
+    Morph Target5: 0.000000
+    Morph Target6: 0.000000
+    Morph Target7: 0.000000
+    Morph Target63: 0.000000
+    Morph Target62: 0.000000
+    Morph Target61: 0.000000
+    Morph Target60: 0.000000
+    Morph Target59: 0.000000
+    Morph Target58: 0.000000
+    Morph Target57: 0.000000
+    Morph Target56: 0.000000
+    Morph Target55: 0.000000
+    Morph Target54: 0.000000
+    Morph Target53: 0.000000
+    Morph Target52: 0.000000
+    Morph Target51: 0.000000
+    Morph Target50: 0.000000
+    Morph Target49: 0.000000
+    Morph Target48: 0.000000
+    Morph Target47: 0.000000
+    Morph Target46: 0.000000
+    Morph Target45: 0.000000
+    Morph Target44: 0.000000
+    Morph Target43: 0.000000
+    Morph Target42: 0.000000
+    Morph Target41: 0.000000
+    Morph Target40: 0.000000
+    Morph Target39: 0.000000
+    Morph Target38: 0.000000
+    Morph Target37: 0.000000
+    Morph Target36: 0.000000
+    Morph Target35: 0.000000
+    Morph Target34: 0.000000
+    Morph Target33: 0.000000
+    Morph Target32: 0.000000
+    Morph Target31: 0.000000
+    Morph Target30: 0.000000
+    Morph Target29: 0.000000
+    Morph Target28: 0.000000
+    Morph Target27: 0.000000
+    Morph Target26: 0.000000
+    Morph Target25: 0.000000
+    Morph Target24: 0.000000
+    Morph Target23: 0.000000
+    Morph Target22: 0.000000
+    Morph Target21: 0.000000
+    Morph Target20: 0.000000
+    Morph Target19: 0.000000
+    Morph Target18: 0.000000
+    Morph Target17: 0.000000
+    Morph Target16: 0.000000
+    Morph Target15: 0.000000
+    Morph Target14: 0.000000
+    Morph Target13: 0.000000
+    Morph Target12: 0.000000
+    Morph Target11: 0.000000
+    Morph Target10: 0.000000
+    Morph Target64: 0.000000
+    Morph Target65: 0.000000
+    Morph Target66: 0.000000
+    Morph Target67: 0.000000
+    Morph Target68: 0.000000
+    Morph Target69: 0.000000
+    Morph Target70: 0.000000
+    Morph Target71: 0.000000
+    Morph Target72: 0.000000
+    Morph Target73: 0.000000
+    Morph Target74: 0.000000
+    Morph Target75: 0.000000
+    Morph Target76: 0.000000
+    Morph Target77: 0.000000
+    Morph Target78: 0.000000
+    Morph Target79: 0.000000
+    Morph Target80: 0.000000
+    Morph Target81: 0.000000
+    Morph Target82: 0.000000
+    Morph Target83: 0.000000
+    Morph Target84: 0.000000
+    Morph Target85: 0.000000
+    Morph Target86: 0.000000
+    Morph Target87: 0.000000
+    Morph Target88: 0.000000
+    Morph Target89: 0.000000
+    Morph Target90: 0.000000
+    Morph Target91: 0.000000
+    Morph Target92: 0.000000
+    Morph Target93: 0.000000
+    Morph Target94: 0.000000
+    Morph Target95: 0.000000
+    Morph Target96: 0.000000
+    Morph Target97: 0.000000
+    Morph Target98: 0.000000
+    Morph Target99: 0.000000
+    Morph Target100: 0.000000
+    Morph Target101: 0.000000
+    Morph Target102: 0.000000
+    Morph Target103: 0.000000
+    Morph Target104: 0.000000
+    Morph Target105: 0.000000

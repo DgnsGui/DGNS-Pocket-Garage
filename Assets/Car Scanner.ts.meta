@@ -1,0 +1,134 @@
+- !<AssetImportMetadata/345f76fc-c73a-4dde-a048-5f4bd167ee01>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 0c451968-94c6-4c5c-9a34-819fde37e784
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 0c451968-94c6-4c5c-9a34-819fde37e784
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> e9bef341-9716-47a7-8dc5-9ac0ea6e76d0
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/e9bef341-9716-47a7-8dc5-9ac0ea6e76d0>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 0e4cd8b5-fad2-46f4-9dc4-7bee6c7ed2a4
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    analyticsManager: false
+    brandLogoLoader: false
+    carScanInterface: false
+    cardInteraction: false
+    cloudManager: false
+    collectionManager: false
+    connectedLensManager: false
+    musicPlayer: false
+    openCollectionDebugButton: false
+    scanButton: false
+    scannerButton: false
+    sfxAudio: false
+    sfxCardFlyToInventory: false
+    sfxCardGenerationFailed: false
+    sfxCardGenerationSuccess: false
+    sfxCardGenerationWaiting: false
+    sfxCheatDetected: false
+    sfxCheatReprimand: false
+    sfxLevelUp: false
+    sfxNegativeProgress: false
+    sfxPositiveProgress: false
+    sfxReviewGenerationWaiting: false
+    sfxScanWaiting: false
+    sfxShareProfileFailed: false
+    sfxShareProfileSuccess: false
+    sfxVehicleCardShown: false
+    vehicleCardUI: false
+    vehicleNarrator: false
+    vehicleScanner: false
+    welcomeManager: false
+    xpManager: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - vehicleScanner: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      vehicleCardUI: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      vehicleNarrator: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      brandLogoLoader: !<MappingBased.AssignableType_3> 00000000-0000-0000-0000-000000000000
+      collectionManager: !<MappingBased.AssignableType_4> 00000000-0000-0000-0000-000000000000
+      cardInteraction: !<MappingBased.AssignableType_5> 00000000-0000-0000-0000-000000000000
+      xpManager: !<MappingBased.AssignableType_6> 00000000-0000-0000-0000-000000000000
+      welcomeManager: !<MappingBased.AssignableType_7> 00000000-0000-0000-0000-000000000000
+      connectedLensManager: !<MappingBased.AssignableType_8> 00000000-0000-0000-0000-000000000000
+      cloudManager: !<MappingBased.AssignableType_9> 00000000-0000-0000-0000-000000000000
+      analyticsManager: !<MappingBased.AssignableType_10> 00000000-0000-0000-0000-000000000000
+      musicPlayer: !<MappingBased.AssignableType_11> 00000000-0000-0000-0000-000000000000
+      scanButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      carScanInterface: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      scannerButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      openCollectionDebugButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      sfxAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      sfxScanWaiting: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxVehicleCardShown: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxCardGenerationWaiting: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxCardGenerationSuccess: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxCardFlyToInventory: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxCardGenerationFailed: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxReviewGenerationWaiting: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxCheatDetected: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxCheatReprimand: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxPositiveProgress: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxNegativeProgress: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxShareProfileSuccess: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxShareProfileFailed: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      sfxLevelUp: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input AssignableType vehicleScanner {"hint":"VehicleScanner script — handles image capture + OpenAI analysis"}'
+    - '// @input AssignableType_1 vehicleCardUI {"hint":"VehicleCardUI script — handles Vehicle Card display + close button"}'
+    - '// @input AssignableType_2 vehicleNarrator {"hint":"VehicleNarrator script — handles description + TTS + text scroll"}'
+    - '// @input AssignableType_3 brandLogoLoader {"hint":"BrandLogoLoader script — handles brand logo loading"}'
+    - '// @input AssignableType_4 collectionManager {"hint":"CollectionManager script — handles save/load/delete, carousel, persistence"}'
+    - '// @input AssignableType_5 cardInteraction {"hint":"CardInteraction script — handles hand tracking, grab/release, carousel auto-rotation"}'
+    - '// @input AssignableType_6 xpManager {"hint":"XPManager script — handles XP, levels, prestige, daily streak, user card"}'
+    - '// @input AssignableType_7 welcomeManager {"hint":"WelcomeManager script — handles welcome screen, mode selection"}'
+    - '// @input AssignableType_8 connectedLensManager {"hint":"ConnectedLensManager script — handles multiplayer session, remote players, carousel sync"}'
+    - '// @input AssignableType_9 cloudManager {"hint":"CloudManager script — handles Snap Cloud / Supabase integration (auth, sync, leaderboard, async trades)"}'
+    - '// @input AssignableType_10 analyticsManager {"hint":"AnalyticsManager script — lightweight session metrics, timing, and error tracking"}'
+    - '// @input AssignableType_11 musicPlayer {"hint":"MusicPlayer script — background music ducking while narrator speaks"}'
+    - '// @input SceneObject scanButton {"hint":"\"Scan Vehicle\" button SceneObject (with RectangleButton)"}'
+    - '// @input SceneObject carScanInterface {"hint":"\"Car Scan Interface\" root SceneObject — hidden until Solo mode starts"}'
+    - '// @input SceneObject scannerButton {"hint":"\"Scanner Button\" on the left hand — reopens Car Scan Interface if closed via (x)"}'
+    - '// @input SceneObject openCollectionDebugButton {"hint":"\"Open Collection Debug\" button under Camera — opens carousel in front of camera for preview testing"}'
+    - '// @input Component.AudioComponent sfxAudio {"hint":"Shared SFX AudioComponent used to play one-shot UI/game sounds"}'
+    - '// @input Asset.AudioTrackAsset sfxScanWaiting {"hint":"SFX: scan waiting (between button press and vehicle card results)"}'
+    - '// @input Asset.AudioTrackAsset sfxVehicleCardShown {"hint":"SFX: vehicle card displayed"}'
+    - '// @input Asset.AudioTrackAsset sfxCardGenerationWaiting {"hint":"SFX: card generation waiting"}'
+    - '// @input Asset.AudioTrackAsset sfxCardGenerationSuccess {"hint":"SFX: card generation success"}'
+    - '// @input Asset.AudioTrackAsset sfxCardFlyToInventory {"hint":"SFX: generated card flies back to inventory"}'
+    - '// @input Asset.AudioTrackAsset sfxCardGenerationFailed {"hint":"SFX: card generation failed"}'
+    - '// @input Asset.AudioTrackAsset sfxReviewGenerationWaiting {"hint":"SFX: review audio/text generation waiting"}'
+    - '// @input Asset.AudioTrackAsset sfxCheatDetected {"hint":"SFX: cheat attempt detected"}'
+    - '// @input Asset.AudioTrackAsset sfxCheatReprimand {"hint":"SFX: cheat reprimand message"}'
+    - '// @input Asset.AudioTrackAsset sfxPositiveProgress {"hint":"SFX: XP+/Trust+ (same sound)"}'
+    - '// @input Asset.AudioTrackAsset sfxNegativeProgress {"hint":"SFX: XP-/Trust- (same sound)"}'
+    - '// @input Asset.AudioTrackAsset sfxShareProfileSuccess {"hint":"SFX: profile shared successfully"}'
+    - '// @input Asset.AudioTrackAsset sfxShareProfileFailed {"hint":"SFX: profile share failed / cloud not connected"}'
+    - '// @input Asset.AudioTrackAsset sfxLevelUp {"hint":"SFX: level up"}'

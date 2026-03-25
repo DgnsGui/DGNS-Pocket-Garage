@@ -1,0 +1,92 @@
+- !<AssetImportMetadata/020af6a5-0326-461a-a45d-f403a5de6441>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 8e9a29bc-a8e4-44f1-b430-dca2ba66ccaa
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 8e9a29bc-a8e4-44f1-b430-dca2ba66ccaa
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> d6afc4be-f2a9-4359-87ff-99c2f41d40fb
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/d6afc4be-f2a9-4359-87ff-99c2f41d40fb>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 16a9244b-ac26-4d24-acc9-ecfedd41df35
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    accelerationBar: false
+    accelerationText: false
+    brakingBar: false
+    brakingText: false
+    brandModelText: false
+    carBrandLogo: false
+    carRarityText: false
+    carTypeText: false
+    carYearText: false
+    cardStatusText: false
+    comfortBar: false
+    comfortText: false
+    topSpeedBar: false
+    topSpeedText: false
+    tractionBar: false
+    tractionText: false
+    vehicleCard: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - vehicleCard: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      brandModelText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      carTypeText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      carYearText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      carRarityText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      carBrandLogo: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      topSpeedBar: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      accelerationBar: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      brakingBar: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      tractionBar: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      comfortBar: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      topSpeedText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      accelerationText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      brakingText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      tractionText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      comfortText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      cardStatusText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject vehicleCard {"hint":"Vehicle Card SceneObject (3D card displayed above the vehicle)"}'
+    - '// @input Component.Text brandModelText {"hint":"Text component for brand and model"}'
+    - '// @input Component.Text carTypeText {"hint":"Text component for vehicle type"}'
+    - '// @input Component.Text carYearText {"hint":"Text component for production year"}'
+    - '// @input Component.Text carRarityText {"hint":"\"Car Rarity\" Text component (displays ★★★☆☆ Uncommon)"}'
+    - '// @input SceneObject carBrandLogo {"hint":"\"Car Brand Logo\" SceneObject (with Image component)"}'
+    - '// @input SceneObject topSpeedBar {"hint":"\"Top Speed Bar\" SceneObject containing 5 Planes + 1 Text"}'
+    - '// @input SceneObject accelerationBar {"hint":"\"Acceleration Bar\" SceneObject containing 5 Planes + 1 Text"}'
+    - '// @input SceneObject brakingBar {"hint":"\"Braking Bar\" SceneObject containing 5 Planes + 1 Text"}'
+    - '// @input SceneObject tractionBar {"hint":"\"Traction Bar\" SceneObject containing 5 Planes + 1 Text"}'
+    - '// @input SceneObject comfortBar {"hint":"\"Comfort Bar\" SceneObject containing 5 Planes + 1 Text"}'
+    - '// @input Component.Text topSpeedText {"hint":"Text label \"Top Speed\""}'
+    - '// @input Component.Text accelerationText {"hint":"Text label \"Acceleration\""}'
+    - '// @input Component.Text brakingText {"hint":"Text label \"Braking\""}'
+    - '// @input Component.Text tractionText {"hint":"Text label \"Traction\""}'
+    - '// @input Component.Text comfortText {"hint":"Text label \"Comfort\""}'
+    - '// @input Component.Text cardStatusText {"hint":"\"Debug card text\" — used for card generation status messages (separate from subtitles)"}'

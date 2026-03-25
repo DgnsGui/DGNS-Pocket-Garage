@@ -1,0 +1,37 @@
+- !<NativePackageDescriptor/0a2dfe29-8d8a-42ef-8722-5ef7867bb146>
+  PackagePath: ""
+  StudioVersion:
+    major: 5
+    minor: 15
+    patch: 3
+    build: 26011319
+    type: Unset
+    buildFlavor: ""
+    timestamp: 0
+    commit: ""
+  Description: "A black bucket hat worn on the user's head."
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  VersionMajor: 1
+  VersionMinor: 0
+  VersionPatch: 0
+  UpdateCheckpoint: 76
+  ExportUid: 14855eeb-dee3-448e-a649-1bfc025b38fc
+  ComponentUid: 2a0dd1c7-c946-4e67-b126-73b65c24e53b
+  PackagePolicy: CanBeUnpackedTransparent
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
+  AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure>
+    Name: ""
+    AssetId: ""
+    Hash: ""
+    Version:
+      major: 0
+      minor: 0
+      patch: 0
+      build: 0
