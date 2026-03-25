@@ -5,7 +5,8 @@
 
 <h1 align="center">DGNS Pocket Garage</h1>
 
-<img src="https://d1p1y5pyxk2k6i.cloudfront.net/4st1l%2Fpreview%2F76564864%2Fmain_large.gif?response-content-disposition=inline%3Bfilename%3D%22main_large.gif%22%3B&response-content-type=image%2Fgif&Expires=1774469522&Signature=AQJrTg41Zz8ltz0z7adgGjH3cSjd-Y60X89TikErFZQ1HnWlVptpIibDDM45pqVVmKa6DDYp3fdQhqhVgh-HMa0Bv8c9-JymmkCIS0HkUxK3fumw-~otg~tVnQk9uurkDlQLOLW9cYjDTVxYmypZfVNKGRWeEF5srmDCi3wgH2py0QM7i71NGk5y6HqRa-~c~lVmM89rv2LMmA-sQlysEKC2dbISZv~xV7PODpQbwFYvJtadGEEOnkDPNiikNhB8rFslPxFBl66nCe3E28wVM7cMM3OxmY2AWhVAQKjOvKO6b0feHn9Bvl1cNrKbBknQ4JLK1amdqo9GVUZRkPCclA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ" />
+![ezgif-4d2a23bae4374139-ezgif com-cut](https://github.com/user-attachments/assets/60dd3d0c-e839-4221-b8ad-3534e7b4c485)
+
 
   <em>
     An open-source AR vehicle scanner Lens for Snap Spectacles, allowing users to scan real vehicles,
