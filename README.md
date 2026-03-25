@@ -5,7 +5,6 @@
 
 <h1 align="center">DGNS Pocket Garage</h1>
 
-<img align="center" width="256" height="256" alt="DGNS Pocket Garage Icon" src="https://github.com/user-attachments/assets/156a41f6-17c3-4f6a-b77c-aff2c12b75ce" />
 
   <em>
     An open-source AR vehicle scanner Lens for Snap Spectacles, allowing users to scan real vehicles,
