@@ -5,14 +5,14 @@
 # If you want to make changes to this file, please put them either above or below this section.
 
 Cache/**
+PluginsUserPreferences/**
+Support/**
 BackUp/**
+Workspaces/**
 .vscode/
 /jsconfig.json
 /tsconfig.json
 .DS_Store
 *.lock
-
-# Local transfer archives (too large for GitHub, not project sources)
-Assets/swisstransfer_*.zip
-
+*.zip
 # Shipped by Lens Studio

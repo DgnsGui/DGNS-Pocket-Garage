@@ -1,8 +1,9 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 1322
+    size: 1342
     values:
+      - ""
       - 3D Hand Tracking Assets
       - 3D Hand Tracking Assets/Hand Tracking Asset Left.handTracking3D
       - 3D Hand Tracking Assets/Hand Tracking Asset Right.handTracking3D
@@ -10,6 +11,9 @@ CollapsedEntities:
       - Adriatic Cruising.mp3
       - Adriatic-Cruising.mp3
       - AnalyticsManager.ts
+      - BG Gradient.png
+      - BG Grardient 2.png
+      - BG Grardient 3.png
       - BLACK.png
       - Base 2.png
       - Base.png
@@ -51,6 +55,8 @@ CollapsedEntities:
       - Car Brand Logos Url.txt
       - Car Scanner.ts
       - CarPlay.mp3
+      - Card BG 2.png
+      - Card BG.png
       - CardInteraction.ts
       - CloudManager.ts
       - CollectionManager.ts
@@ -106,6 +112,8 @@ CollapsedEntities:
       - Image 8.mat
       - Image.mat
       - ImageMaterial 10.mat
+      - ImageMaterial 11.mat
+      - ImageMaterial 12.mat
       - ImageMaterial 2.mat
       - ImageMaterial 3.mat
       - ImageMaterial 4.mat
@@ -232,6 +240,15 @@ CollapsedEntities:
       - RemoteServiceGateway.lspkg/package.native
       - Render Target.renderTarget
       - S1-peugeot-307-cc-2003-2009-pour-rouler-a-ciel-ouvert-en-famille-des-2-800-eur-776228.jpg
+      - SFX1.mp3
+      - SFX11.mp3
+      - SFX15.mp3
+      - SFX18.mp3
+      - SFX2.mp3
+      - SFX3.mp3
+      - SFX4 2.mp3
+      - SFX7.mp3
+      - SFX9.mp3
       - Scanner 2.mp3
       - Scene.scene
       - SnapCloudExamples.lspkg
@@ -799,6 +816,9 @@ CollapsedEntities:
       - SpectaclesInteractionKit.lspkg/VersionNumber.ts
       - SpectaclesInteractionKit.lspkg/package.native
       - SpectaclesInteractionKit.lspkg/tsconfig.json
+      - SpectaclesInteractionKitExamples.lspkg
+      - SpectaclesInteractionKitExamples.lspkg/Examples
+      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Materials
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Materials/Icons
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Materials/Icons/ModernBodyTube_icon.mat
@@ -895,6 +915,7 @@ CollapsedEntities:
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Prefabs/ScrollViewListItems/Space Age Body Tube.prefab
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Prefabs/ScrollViewListItems/Space Age Fins.prefab
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Prefabs/ScrollViewListItems/Space Age Nose Cone.prefab
+      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/SFX
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/SFX/ui-rocket-ignition_c-1db_stereo4824.wav
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/SFX/ui-rocket-land-cutoff-c_-1dB_stereo4824.wav
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Scripts
@@ -1298,7 +1319,6 @@ CollapsedEntities:
       - VehicleNarrator.ts
       - VehicleScanner.ts
       - VehicleTypes.ts
-      - Vertical Collector Card Template.prefab
       - WHOOSH 10.wav
       - WHOOSH 9.wav
       - WelcomeManager.ts

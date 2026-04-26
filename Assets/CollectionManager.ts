@@ -2054,13 +2054,17 @@ export class CollectionManager extends BaseScriptComponent {
 
         const bgScene = this.pickRandomBackground();
         const editPrompt = 'Keep the vehicle in the foreground exactly as it appears in the photo — '
-            + 'preserve every real detail, scratch, dent, dirt, color, and imperfection faithfully. '
-            + 'Replace ONLY the background with a stunning professional automotive photography scene: '
-            + bgScene + ' '
-            + 'Sharp focus on the car, cinematic depth of field on the background, '
-            + 'beautiful natural lighting, high-end car magazine quality. '
-            + 'Do NOT modify the car itself in any way.';
-
+    + 'MANDATORY FRAMING: The entire vehicle must be fully inside the frame (front/rear bumpers, roofline, all wheels, and mirrors visible). '
+    + 'Do not crop or cut off any part of the car. Keep approximately 8–12% margin around the whole vehicle on all sides. '
+    + 'If necessary, reframe/zoom out to ensure full-car visibility while preserving true vehicle proportions and perspective.';
+    + 'preserve body shape, paint, scratches, dents, dirt, and all non-plate details faithfully. '
+    + 'Replace ONLY the background with a professional automotive photography scene: '
+    + bgScene + ' '
+    + 'Sharp focus on the car, cinematic depth of field on the background, natural lighting, magazine quality. '
+    + 'MANDATORY LICENSE PLATE SAFETY: Do not reproduce any real license plate text. '
+    + 'Replace all visible license plates with generic white plates. '
+    + 'The main vehicle plate must read exactly "DGNS" in a bold geometric sans-serif style similar to Futura Bold, centered and legible. '
+    + 'No other plate characters or numbers may remain anywhere in the image. '
         let imageBytes: Uint8Array;
         try {
             imageBytes = Base64.decode(this.lastCapturedBase64);

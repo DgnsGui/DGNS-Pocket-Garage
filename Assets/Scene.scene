@@ -185,6 +185,21 @@
   DecayType: None
   DecayLimit: false
   DecayRange: 40.000000
+- !<SceneObject/00467417-87b8-48ae-9939-6176769736bc>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 10.800000, y: 27.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> a6d743b0-0506-4692-89e6-a0f3bd38bf95
 - !<ScriptComponent/00690b92-0e7e-41f6-8aea-26e1c71b352e>
   PrefabRemaps:
     []
@@ -258,7 +273,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -4.600033, y: -0.329143, z: 0.010000}
+    Position: {x: -4.600033, y: -0.329143, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
@@ -288,7 +303,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 4.149800, y: -3.234452, z: 0.010002}
+    Position: {x: 4.149800, y: -3.234452, z: 0.050000}
     Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
     Scale: {x: 4.500000, y: 1.000000, z: 0.400000}
     HasSegmentScaleCompensation: false
@@ -301,7 +316,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Right
@@ -324,7 +339,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -408,7 +423,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 7.912491, y: -3.367021, z: 0.010010}
+    Position: {x: 7.912491, y: -3.367021, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.550000, y: 0.550000, z: 0.550000}
     HasSegmentScaleCompensation: false
@@ -417,6 +432,21 @@
   Components:
     - !<own> 74b8c1a7-abea-4537-9cd8-50e820845ce7
     - !<own> 8a8f42fb-d457-49ff-98d4-52a404798b59
+- !<SceneObject/03f239df-c690-4b4e-a68f-5339cecfd56e>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 10.800000, y: 22.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> de6e4fa7-536f-4f09-9a07-4d6f313bad82
 - !<RenderMeshVisual/043222d2-5d65-4a3e-b628-d5b43c58c53b>
   PrefabRemaps:
     []
@@ -480,7 +510,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -6.709089, y: -2.503315, z: 0.009998}
+    Position: {x: -6.709089, y: -2.503315, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.600000, z: 0.600000}
     HasSegmentScaleCompensation: false
@@ -576,7 +606,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -7.519089, y: -1.614765, z: 0.010000}
+    Position: {x: -7.519089, y: -1.614765, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.700000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -620,7 +650,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -628,7 +658,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -640,7 +670,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -648,7 +678,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -677,7 +707,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 8.000000, y: 2.088003, z: 0.010000}
+    Position: {x: 8.000000, y: 2.088003, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 2.500000, y: 2.000000, z: 2.000000}
     HasSegmentScaleCompensation: false
@@ -724,7 +754,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -772,7 +802,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -780,7 +810,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -807,7 +837,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -833,7 +863,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -2.404358, y: -1.700000, z: 0.010010}
+    Position: {x: -2.404358, y: -1.700000, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.375000, z: 0.375000}
     HasSegmentScaleCompensation: false
@@ -953,7 +983,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -976,7 +1006,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -1064,7 +1094,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -1110,7 +1140,7 @@
   Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -2.752950, y: -2.503315, z: 0.009998}
+    Position: {x: -2.752950, y: -2.503315, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.600000, z: 0.600000}
     HasSegmentScaleCompensation: false
@@ -1139,7 +1169,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -1163,7 +1193,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -1330,7 +1360,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -1353,7 +1383,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -1443,7 +1473,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -1497,7 +1527,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -1520,7 +1550,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -1588,6 +1618,21 @@
     []
   Components:
     - !<own> 75975a87-7d9b-4b11-a1f9-813ed0cc51ec
+- !<SceneObject/14d2365f-0af6-4819-9c79-c36352fd35ca>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 10.800000, y: 27.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c478dbad-90b6-454f-bcbb-aabf17d70cd0
 - !<ScriptComponent/1519a26e-99c9-4c70-b8e1-a61788d5a642>
   PrefabRemaps:
     []
@@ -1737,10 +1782,10 @@
   PrefabRemaps:
     []
   Name: Level Badge
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 5.632417, y: 3.585852, z: 0.010000}
+    Position: {x: 5.065359, y: 2.024679, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 3.000000, y: 3.000000, z: 3.000000}
     HasSegmentScaleCompensation: false
@@ -1783,7 +1828,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -1832,6 +1877,25 @@
     - !<own> 2b48df55-44c4-4516-b674-91f4c5d5481b
   Components:
     []
+- !<Image/19837d55-91e6-4cdc-82db-d8f95096ee0f>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/1a85e22d-88a8-4a76-8f9a-6c97b44a3c0b>
   PrefabRemaps:
     []
@@ -1839,7 +1903,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 0.000000, z: 0.020000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -1867,7 +1931,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -1875,7 +1939,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -1924,6 +1988,7 @@
     - !<own> 6a11a045-3e0f-4cac-abdd-a10f00c80b26
     - !<own> 551d94a8-33d9-4f6f-9cdf-a2c127a387c7
     - !<own> aab661ce-b61e-43f3-819c-6f0006bf3be4
+    - !<own> 4733c23b-7b86-418c-b1dd-8823e321aa98
   Components:
     - !<own> a656f9ce-6483-438d-99b2-54ec0e03c9db
 - !<ScriptComponent/1bd00ff9-cf08-4710-8015-113deb8e7740>
@@ -1994,7 +2059,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -2019,7 +2084,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -2204,7 +2269,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000002, y: 0.574094, z: 0.009999}
+    Position: {x: 0.000002, y: 0.574094, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -2228,6 +2293,7 @@
     - !<own> 3f87756c-0260-4385-83ea-f44545dcb1d5
     - !<own> 50fb36c1-c97b-46c6-a096-dbc7fa3b2d79
     - !<own> bfbe4fdf-1d6b-4c4b-959a-2b22754e1d89
+    - !<own> 00467417-87b8-48ae-9939-6176769736bc
   Components:
     - !<own> aae47a30-927d-406e-be4e-a2c69ad236b9
 - !<SceneObject/1fbad860-d2cc-4f57-a307-5ac38abfa448>
@@ -2381,7 +2447,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -2389,7 +2455,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -2512,7 +2578,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -2520,7 +2586,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -2632,7 +2698,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -16.996099, z: 0.010000}
+    Position: {x: 0.000000, y: -16.996099, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -2693,7 +2759,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -2701,7 +2767,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -2835,7 +2901,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -2.404358, y: 1.300000, z: 0.010010}
+    Position: {x: -2.404358, y: 1.300000, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.375000, z: 0.375000}
     HasSegmentScaleCompensation: false
@@ -2870,7 +2936,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -3.773196, y: -0.734396, z: 0.010008}
+    Position: {x: -3.773196, y: -0.734396, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.350000, y: 0.281250, z: 0.281250}
     HasSegmentScaleCompensation: false
@@ -2887,7 +2953,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -2912,7 +2978,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -3075,7 +3141,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -10.974821, z: 0.010000}
+    Position: {x: 0.000000, y: -12.000000, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.700000, y: 0.700000, z: 0.700000}
     HasSegmentScaleCompensation: false
@@ -3088,7 +3154,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -3096,7 +3162,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -3140,7 +3206,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -3148,7 +3214,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -3176,6 +3242,7 @@
     - !<own> 047af2e2-7645-40cd-a62a-214dc5851036
     - !<own> 118ee91f-0bc6-43f7-af2d-e75bdd31ed93
     - !<own> d5c39945-dd91-49b5-a4bd-a05398cab746
+    - !<own> 97ef500a-872e-4e1f-a9d1-fec685c7ad56
   Components:
     - !<own> c1270246-8c62-4d41-bb64-90dd057550c9
 - !<SceneObject/2e06383f-9cb7-4b8d-9573-dcadb57c6a8c>
@@ -3374,7 +3441,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -3455,7 +3522,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -3463,7 +3530,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -3588,7 +3655,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 6.000000, y: -6.643548, z: 0.009998}
+    Position: {x: 6.000000, y: -6.643548, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -3685,7 +3752,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 1.385578, y: 2.776727, z: 0.010000}
+    Position: {x: 1.385578, y: 2.776727, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
@@ -3776,6 +3843,25 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<Image/37e9082e-9d91-4595-8ca7-cadd86ac2173>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/37e9d4cf-e6d4-4bcb-be83-32d138e7ee03>
   PrefabRemaps:
     []
@@ -3813,7 +3899,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -4.151768, y: 4.374397, z: 0.010000}
+    Position: {x: -4.151768, y: 4.374397, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
@@ -3848,7 +3934,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000001, y: 0.375817, z: 0.010000}
+    Position: {x: 0.000001, y: 0.375817, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -3972,7 +4058,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -3995,7 +4081,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -4053,7 +4139,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: FillAndCut
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -4074,7 +4160,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 9.149800, y: -3.234452, z: 0.010002}
+    Position: {x: 9.149800, y: -3.234452, z: 0.050000}
     Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
     Scale: {x: 4.500000, y: 1.000000, z: 0.400000}
     HasSegmentScaleCompensation: false
@@ -4228,7 +4314,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Top
   HorizontalAlignment: Center
@@ -4251,7 +4337,7 @@
   OverflowHorizontal: Wrap
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -4479,7 +4565,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -4494,9 +4580,9 @@
   FontSize: 45
   Font: !<reference> 00000000-0000-0000-0000-000000000000
   LayoutRect:
-    left: -18.500000
+    left: -15.500000
     bottom: -2.250000
-    right: 18.500000
+    right: 15.500000
     top: 2.250000
   OverflowVertical: Overflow
   OverflowHorizontal: Wrap
@@ -4562,7 +4648,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 6.000000, y: -1.230705, z: 0.009998}
+    Position: {x: 6.000000, y: -1.230705, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -4617,7 +4703,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -2.130362, y: 1.243322, z: 0.010000}
+    Position: {x: -2.130362, y: 1.243322, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
@@ -4630,7 +4716,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -4638,7 +4724,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -4682,7 +4768,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000001, y: 0.375817, z: 0.010000}
+    Position: {x: 0.000001, y: 0.375817, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -4780,7 +4866,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -4803,7 +4889,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -4893,7 +4979,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 6.917429, y: 1.350886, z: 0.010000}
+    Position: {x: 6.917429, y: 1.350886, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 3.000000, y: 3.000000, z: 3.000000}
     HasSegmentScaleCompensation: false
@@ -5033,7 +5119,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _size: !<Vec3> {x: 9.000000, y: 4.000000, z: 1.000000}
       _inactive: false
       _playAudio: false
@@ -5197,7 +5283,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -5220,7 +5306,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -5293,7 +5379,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -5351,6 +5437,21 @@
     []
   Components:
     - !<own> 7b19a65f-2079-4afa-8d90-b3fb79464eb3
+- !<SceneObject/4733c23b-7b86-418c-b1dd-8823e321aa98>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 32.799999, y: 27.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 8707583f-721c-45bd-8733-91ec6b734922
 - !<ScriptComponent/478d7fee-288a-4191-aeed-6d92cc229fa4>
   PrefabRemaps:
     []
@@ -5396,7 +5497,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -5404,7 +5505,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -5431,7 +5532,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -5455,7 +5556,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -5480,7 +5581,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -5568,7 +5669,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _size: !<Vec3> {x: 10.000000, y: 4.000000, z: 1.000000}
       _inactive: false
       _playAudio: false
@@ -5594,7 +5695,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 6.000000, y: -2.361011, z: 0.009998}
+    Position: {x: 6.000000, y: -2.361011, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -5608,7 +5709,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -5616,7 +5717,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -5628,7 +5729,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -5636,13 +5737,28 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/4b4dc394-5a40-4444-b3b9-3ae9562ffcd2>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 8.800000, y: 31.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 763209d4-9a03-48a4-80a6-95d7558819c1
 - !<SceneObject/4c08c193-46dd-40f1-82f2-3a6c255079de>
   PrefabRemaps:
     []
@@ -5738,7 +5854,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -7.519089, y: -1.614765, z: 0.010000}
+    Position: {x: -7.519089, y: -1.614765, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.700000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -5832,7 +5948,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -5927,7 +6043,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -6.000000, y: -2.361011, z: 0.009999}
+    Position: {x: -6.000000, y: -2.361011, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -5994,7 +6110,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -6.000000, y: -1.230705, z: 0.009999}
+    Position: {x: -6.000000, y: -1.230705, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -6023,7 +6139,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -6046,7 +6162,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -6138,6 +6254,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/53ee5d11-17e8-4983-acb4-ebd139c9b0f0>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 8.800000, y: 26.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ec923bb4-6bb5-4540-a68f-c3d7792fe523
 - !<SceneObject/541a1667-fb17-43bf-bd3b-7b713063d3f7>
   PrefabRemaps:
     []
@@ -6180,7 +6311,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -0.005144, y: 2.116052, z: 0.010002}
+    Position: {x: -0.005144, y: 2.116052, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 19.000000, y: 18.000000, z: 10.000000}
     HasSegmentScaleCompensation: false
@@ -6208,7 +6339,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -6216,7 +6347,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -6310,6 +6441,25 @@
   ScriptTypes:
     "":
       {}
+- !<Image/56514825-2059-439c-bfc2-673dd0793083>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/575ef202-de58-439f-b4f5-4c2021117bcc>
   PrefabRemaps:
     []
@@ -6325,6 +6475,21 @@
     []
   Components:
     - !<own> 9ed6561c-4338-49d5-ac78-019e626378c3
+- !<SceneObject/5777de65-8176-41b2-8bc9-ae8801da4117>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 19.799999, y: 32.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 19837d55-91e6-4cdc-82db-d8f95096ee0f
 - !<SceneObject/578bdd4d-1d5d-45e9-9a9c-765cc2764576>
   PrefabRemaps:
     []
@@ -6332,7 +6497,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 2.585380, z: 0.010000}
+    Position: {x: -0.567059, y: 1.024207, z: 0.010000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -6345,7 +6510,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: FillAndCut
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -6379,7 +6544,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -6402,7 +6567,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -6810,7 +6975,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -6818,7 +6983,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -6832,7 +6997,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 3.430561, y: 4.215560, z: 0.010000}
+    Position: {x: 3.430561, y: 4.215560, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
@@ -7045,7 +7210,7 @@
   PrefabRemaps:
     []
   Name: Language Container
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7059,6 +7224,7 @@
     - !<own> 75f94882-044e-44b4-8d20-c9234f756d73
     - !<own> 095c62ba-9460-416a-ac48-2a7021486f3e
     - !<own> d40c060c-07ed-4907-b3ce-2df32505673d
+    - !<own> 6e0b76d4-52a6-4c1f-8cc9-747159b98ada
   Components:
     - !<own> d9463e16-0889-4599-9bc1-8253bca8ae98
 - !<RenderMeshVisual/5fa37268-1896-49a0-b157-2ecff0a9c18d>
@@ -7101,7 +7267,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -7124,7 +7290,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -7265,7 +7431,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -3.561258, y: 12.954985, z: 0.010000}
+    Position: {x: -3.561258, y: 12.954985, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.600000, z: 0.600000}
     HasSegmentScaleCompensation: false
@@ -7443,7 +7609,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 0.000000, z: 0.020000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -7472,7 +7638,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -7480,7 +7646,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -7530,7 +7696,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -7544,7 +7710,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -11.463839, z: 0.010002}
+    Position: {x: 0.000000, y: -11.463839, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -7639,7 +7805,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -7664,7 +7830,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -7781,7 +7947,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -2.404358, y: -0.200000, z: 0.010010}
+    Position: {x: -2.404358, y: -0.200000, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.375000, z: 0.375000}
     HasSegmentScaleCompensation: false
@@ -7816,7 +7982,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -0.850200, y: -3.234452, z: 0.010002}
+    Position: {x: -0.850200, y: -3.234452, z: 0.050000}
     Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
     Scale: {x: 4.500000, y: 1.000000, z: 0.400000}
     HasSegmentScaleCompensation: false
@@ -7824,12 +7990,27 @@
     []
   Components:
     - !<own> f52961a4-82fa-45be-8f7b-238e8f09d6b6
+- !<SceneObject/6e0b76d4-52a6-4c1f-8cc9-747159b98ada>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 16.799999, y: 35.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 37e9082e-9d91-4595-8ca7-cadd86ac2173
 - !<Image/6e3e053b-f8ab-4a5a-ab4e-a316d0db3bce>
   PrefabRemaps:
     []
   Name: Image
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Fit
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -7850,7 +8031,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 6.000000, y: -1.400238, z: 0.009998}
+    Position: {x: 6.000000, y: -1.400238, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -7879,7 +8060,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -8055,6 +8236,7 @@
     - !<own> 169604df-e0c9-449a-a807-95b6df994c28
     - !<own> a6f15f15-be0f-4c31-9dca-6a18f7fe00f4
     - !<own> ef952b34-164c-44ba-a4a2-be1719fc67b8
+    - !<own> 53ee5d11-17e8-4983-acb4-ebd139c9b0f0
   Components:
     - !<own> 04ffa103-c090-4f50-89ba-703903a7da02
 - !<SceneObject/731dfee6-e289-4a41-a667-03479e59de13>
@@ -8242,7 +8424,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _size: !<Vec3> {x: 9.000000, y: 4.000000, z: 1.000000}
       _inactive: false
       _playAudio: false
@@ -8281,7 +8463,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Top
   HorizontalAlignment: Left
@@ -8307,7 +8489,7 @@
   OverflowHorizontal: Wrap
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -8471,7 +8653,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 2.088003, z: 0.010000}
+    Position: {x: 0.000000, y: 2.088003, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 2.500000, y: 2.000000, z: 2.000000}
     HasSegmentScaleCompensation: false
@@ -8480,6 +8662,44 @@
   Components:
     - !<own> 9b925b53-1dfe-4e4c-8fa1-7b50d4319eee
     - !<own> bed94da3-20c9-40d2-821a-4edc3ae63537
+- !<Image/763209d4-9a03-48a4-80a6-95d7558819c1>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<Image/763cc53f-5dc7-4c59-9eb1-b12c4c9cac2e>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/7747c579-b049-4c0d-bd9b-db409ed1a845>
   PrefabRemaps:
     []
@@ -8500,7 +8720,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Fit
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -8600,7 +8820,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -8608,7 +8828,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -8631,12 +8851,27 @@
   Components:
     - !<own> f86e2621-3fd2-4425-8030-179d36ee5e57
     - !<own> 0bf2934f-88ae-4312-8149-da0043b1a9fe
+- !<SceneObject/786d12a8-963b-41ba-89cc-17ae236d19dc>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 14.800000, y: 25.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d9434d4f-2f72-435e-af2a-e30b2ab8bf46
 - !<RenderMeshVisual/78ba2cf8-3ee3-49e3-a1f1-c359acf9262e>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -8644,7 +8879,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -8671,7 +8906,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -8679,7 +8914,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -8981,7 +9216,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -3.818952, z: 0.010000}
+    Position: {x: 0.000000, y: -3.818952, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -9076,7 +9311,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -9099,7 +9334,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -9174,7 +9409,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 6.018917, y: -2.038120, z: 0.009999}
+    Position: {x: 6.018917, y: -2.038120, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.600000, z: 0.600000}
     HasSegmentScaleCompensation: false
@@ -9289,12 +9524,31 @@
     - !<own> 9a14c486-688a-4af4-a99a-084652f3efa1
   Components:
     []
+- !<Image/8707583f-721c-45bd-8733-91ec6b734922>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Text/87575eb1-9e31-4ddd-9eaa-948cfe9ce879>
   PrefabRemaps:
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Right
@@ -9317,7 +9571,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -9375,7 +9629,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -9398,7 +9652,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -9482,6 +9736,7 @@
     - !<own> 1f6c01b1-3a03-451b-842c-1d1a513813cf
     - !<own> 959815c9-00d3-4d19-be48-ccd62afc57aa
     - !<own> 6ef27f54-6b75-4bcd-9274-5617f56a34be
+    - !<own> ff26bf4b-a0cf-4b4a-b83d-17a3d70cfb62
   Components:
     - !<own> 7b52f3b1-e23d-4e64-8695-d2529e523b6c
 - !<ScriptComponent/8a8f42fb-d457-49ff-98d4-52a404798b59>
@@ -9639,7 +9894,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -9699,6 +9954,7 @@
     - !<own> 201a0553-eff0-441a-a916-ac059eea67a2
     - !<own> dea6e94b-6403-4c77-9f40-a4baffd965e8
     - !<own> 03511fa9-a97a-4bf0-8868-95336f31cd71
+    - !<own> 786d12a8-963b-41ba-89cc-17ae236d19dc
   Components:
     - !<own> 62590bb1-1620-4cfc-96c5-ba7b0f4e69c7
 - !<Image/8c3fff29-32b0-4291-b37f-4275ed58b43b>
@@ -9727,7 +9983,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -6.000000, y: -2.361011, z: 0.009999}
+    Position: {x: -6.000000, y: -2.361011, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -9859,7 +10115,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -9882,7 +10138,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -10094,7 +10350,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -6.000000, y: -1.400238, z: 0.009999}
+    Position: {x: -6.000000, y: -1.400238, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -10163,6 +10419,21 @@
     - !<own> 3edde0ea-8cd6-43be-9a1e-265dcd328ee6
   Components:
     []
+- !<SceneObject/97ef500a-872e-4e1f-a9d1-fec685c7ad56>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 9.000000, y: 21.500000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 763cc53f-5dc7-4c59-9eb1-b12c4c9cac2e
 - !<SceneObject/98284ea3-58da-471a-b745-9a192cb9e799>
   PrefabRemaps:
     []
@@ -10230,7 +10501,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -7.519089, y: -1.614765, z: 0.010000}
+    Position: {x: -7.519089, y: -1.614765, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.700000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -10288,10 +10559,10 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
-      _style: Secondary
+      _style: Primary
       _toggleable: false
       _defaultToOn: false
       addCallbacks: false
@@ -10357,7 +10628,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -10380,7 +10651,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -10453,7 +10724,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -10461,7 +10732,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -10473,7 +10744,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -10481,7 +10752,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -10518,6 +10789,7 @@
     - !<own> 3de1608d-8f38-4efe-9e44-385c7e00e708
     - !<own> 5309e320-6d1b-4002-aa87-566cb14b4aea
     - !<own> 3e61ae96-08a7-49f2-981e-1783ded636f3
+    - !<own> 4b4dc394-5a40-4444-b3b9-3ae9562ffcd2
   Components:
     - !<own> bbc6ecf2-7428-4fdc-9630-2bdde45f3312
 - !<SceneObject/a10820d7-45b6-4978-807e-cf5564c6b3a2>
@@ -10540,7 +10812,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -10563,7 +10835,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -10632,6 +10904,7 @@
     - !<own> 395fe6d9-654f-4f6b-81bc-ff4334dfa9a1
     - !<own> 8c4456df-82da-4ff6-90f9-24d9e9107dbd
     - !<own> 4af9f88a-4fad-4e73-b922-38d290ea1e2a
+    - !<own> 14d2365f-0af6-4819-9c79-c36352fd35ca
   Components:
     - !<own> ab31dcdc-0ccc-49c8-96fb-8ca5a7fd38d3
 - !<SceneObject/a4be667c-356e-4cf4-81ef-21e3e55cb1c2>
@@ -10654,7 +10927,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -10677,7 +10950,7 @@
   OverflowHorizontal: Wrap
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -10853,18 +11126,37 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 5f7d2c60-5a22-47f1-8a06-77cd271c7f48
-    - !<own> 73141344-ac51-459f-83db-145a738ca340
-    - !<own> 9ff91329-17c8-4c8e-b28c-8aa7acd42e7c
-    - !<own> b58be08a-29d5-43fc-b7f9-0882e42294a5
     - !<own> c401bcd0-e0fa-4dcb-acca-9263de04b880
     - !<own> 1bb4448d-4418-4378-9119-2c8ee42777ad
     - !<own> 8c2ea113-b3c9-467e-a9f9-79e7ac9f0146
+    - !<own> 73141344-ac51-459f-83db-145a738ca340
+    - !<own> 9ff91329-17c8-4c8e-b28c-8aa7acd42e7c
+    - !<own> b58be08a-29d5-43fc-b7f9-0882e42294a5
     - !<own> 1f90d501-8977-4d4e-9155-bfb4cc1fe460
     - !<own> a3a89ac8-3ec3-403c-b185-3f2714e08c67
     - !<own> 88ae98cd-81b0-4da5-aa84-fe7f44f57bf9
     - !<own> 2db84b0c-11aa-4313-a7e8-bd153373273b
   Components:
     []
+- !<Image/a6d743b0-0506-4692-89e6-a0f3bd38bf95>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/a6f15f15-be0f-4c31-9dca-6a18f7fe00f4>
   PrefabRemaps:
     []
@@ -10872,7 +11164,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -6.000000, y: -1.230705, z: 0.009999}
+    Position: {x: -6.000000, y: -1.230705, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -10982,7 +11274,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Fit
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -11018,7 +11310,7 @@
   Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -33.640999, z: 0.010000}
+    Position: {x: 0.000000, y: -33.640999, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -11222,10 +11514,10 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
-      _style: Secondary
+      _style: Primary
       _toggleable: false
       _defaultToOn: false
       addCallbacks: false
@@ -11294,7 +11586,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -8.000000, y: 2.088003, z: 0.010000}
+    Position: {x: -8.000000, y: 2.088003, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 2.500000, y: 2.000000, z: 2.000000}
     HasSegmentScaleCompensation: false
@@ -11714,7 +12006,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -4.151775, y: 5.374352, z: 0.010000}
+    Position: {x: -4.151775, y: 5.374352, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
@@ -11919,6 +12211,7 @@
     - !<own> 578bdd4d-1d5d-45e9-9a9c-765cc2764576
     - !<own> c782423a-cf53-4139-963b-e0cc0f1f0181
     - !<own> c691f880-1f0e-474d-bef6-401793db490d
+    - !<own> 03f239df-c690-4b4e-a68f-5339cecfd56e
   Components:
     - !<own> f3f507a6-a816-406c-9df5-38097de2fb80
 - !<Text/b64ea21e-b039-421c-8285-2bd4fa855cd6>
@@ -12054,7 +12347,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -12062,7 +12355,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -12076,7 +12369,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -2.404358, y: -3.148544, z: 0.010010}
+    Position: {x: -2.404358, y: -3.148544, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.375000, z: 0.375000}
     HasSegmentScaleCompensation: false
@@ -12345,7 +12638,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -12446,7 +12739,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -12454,7 +12747,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -12522,7 +12815,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 6.000000, y: -2.361011, z: 0.009998}
+    Position: {x: 6.000000, y: -2.361011, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -12566,10 +12859,10 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
-      _style: Secondary
+      _style: Primary
       _toggleable: false
       _defaultToOn: false
       addCallbacks: false
@@ -12761,7 +13054,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -12769,7 +13062,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -12793,8 +13086,28 @@
     - !<own> fbcac1fd-2740-4a29-9eb2-c100c39bfdf8
     - !<own> 35e8873e-82ae-42df-acbc-385dbff68d0d
     - !<own> c7dafd4f-32d4-4b65-bafc-cff05f723862
+    - !<own> 5777de65-8176-41b2-8bc9-ae8801da4117
   Components:
     - !<own> 948abb65-a5cb-4d8e-88ff-18550610f22f
+- !<Image/c478dbad-90b6-454f-bcbb-aabf17d70cd0>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/c5f1f0e9-6707-4a13-9453-fbf92b4eba12>
   PrefabRemaps:
     []
@@ -12817,7 +13130,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 2.021886, y: 2.438316, z: 0.010010}
+    Position: {x: 1.454828, y: 0.877144, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.450000, y: 0.281250, z: 0.281250}
     HasSegmentScaleCompensation: false
@@ -12904,7 +13217,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -12927,7 +13240,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -12987,7 +13300,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 5.046652, y: 0.733418, z: 0.010000}
+    Position: {x: 4.479593, y: -0.827754, z: 0.010000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
@@ -13017,7 +13330,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -6.700000, y: 1.600000, z: 0.010000}
+    Position: {x: -6.700000, y: 1.600000, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 13.000000, y: 10.000000, z: 10.000000}
     HasSegmentScaleCompensation: false
@@ -13086,7 +13399,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -7.519089, y: -1.614765, z: 0.010000}
+    Position: {x: -7.519089, y: -1.614765, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.700000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -13312,7 +13625,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -13335,7 +13648,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -13401,7 +13714,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -13458,7 +13771,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -13482,7 +13795,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -13490,7 +13803,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -13598,7 +13911,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -13606,7 +13919,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -13633,7 +13946,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -13656,7 +13969,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -13716,7 +14029,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -4.809348, z: 0.009999}
+    Position: {x: 0.000000, y: -4.809348, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -13732,7 +14045,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 1.687536, y: 2.145292, z: 0.010000}
+    Position: {x: 1.687536, y: 2.145292, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -13758,11 +14071,11 @@
 - !<SceneObject/d5c39945-dd91-49b5-a4bd-a05398cab746>
   PrefabRemaps:
     []
-  Name: "Scanned by: Username, rank, trust score"
+  Name: "rank, trust score"
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -0.481076, y: -2.373241, z: 0.010010}
+    Position: {x: 4.594776, y: -3.434978, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
@@ -13999,7 +14312,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -8.213947, z: 0.010000}
+    Position: {x: 0.000000, y: -8.213947, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -14007,6 +14320,25 @@
     []
   Components:
     - !<own> a4f42294-461f-42b4-bd81-db44769c8da9
+- !<Image/d9434d4f-2f72-435e-af2a-e30b2ab8bf46>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScriptComponent/d9463e16-0889-4599-9bc1-8253bca8ae98>
   PrefabRemaps:
     []
@@ -14203,7 +14535,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -14301,7 +14633,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 0.000000, z: 0.020000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -14425,7 +14757,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -14433,7 +14765,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -14464,6 +14796,25 @@
   ScriptTypes:
     "":
       {}
+- !<Image/de6e4fa7-536f-4f09-9a07-4d6f313bad82>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/dea6e94b-6403-4c77-9f40-a4baffd965e8>
   PrefabRemaps:
     []
@@ -14471,7 +14822,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 7.912491, y: -0.719587, z: 0.010010}
+    Position: {x: 7.912491, y: -0.719587, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.550000, y: 0.550000, z: 0.550000}
     HasSegmentScaleCompensation: false
@@ -14517,7 +14868,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -10.850190, y: -3.234452, z: 0.010002}
+    Position: {x: -10.850190, y: -3.234452, z: 0.050000}
     Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
     Scale: {x: 4.500000, y: 1.000000, z: 0.400000}
     HasSegmentScaleCompensation: false
@@ -14724,7 +15075,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -14792,7 +15143,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -14815,7 +15166,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -15015,7 +15366,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -15071,7 +15422,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 2.273941, y: 2.091056, z: 0.009999}
+    Position: {x: 2.273941, y: 2.091056, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -15086,7 +15437,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -2.404358, y: 2.800000, z: 0.010010}
+    Position: {x: -2.404358, y: 2.800000, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.375000, z: 0.375000}
     HasSegmentScaleCompensation: false
@@ -15114,6 +15465,25 @@
     - !<own> 5abc1ef4-db66-4606-9d44-d1596f8d9818
   Components:
     []
+- !<Image/ec923bb4-6bb5-4540-a68f-c3d7792fe523>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46dd4edb-6d4f-471b-a4cb-b578f0a7f995
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/ec972456-e2a8-4c32-a07d-9748e5c1b8f2>
   PrefabRemaps:
     []
@@ -15386,7 +15756,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 6.000000, y: -1.230705, z: 0.009998}
+    Position: {x: 6.000000, y: -1.230705, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -15455,7 +15825,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -15478,7 +15848,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -15568,7 +15938,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -0.978444, y: 2.899601, z: 0.010000}
+    Position: {x: -0.978444, y: 2.899601, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -15598,7 +15968,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -7.519089, y: -1.614765, z: 0.010000}
+    Position: {x: -7.519089, y: -1.614765, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.700000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -15698,7 +16068,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -15706,7 +16076,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -15906,7 +16276,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000001, y: 2.899601, z: 0.010000}
+    Position: {x: 0.000001, y: 2.899601, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -15919,7 +16289,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Left
@@ -15942,7 +16312,7 @@
   OverflowHorizontal: Wrap
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -16008,7 +16378,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -16059,7 +16429,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -16082,7 +16452,7 @@
   OverflowHorizontal: Overflow
   Fill: !<TextFill>
     Mode: Solid
-    Color: {x: 0.941176, y: 0.941176, z: 0.941176, w: 1.000000}
+    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     Texture: !<reference> 00000000-0000-0000-0000-000000000000
     ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     TileCount: 5.000000
@@ -16140,7 +16510,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -16148,7 +16518,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> ef122863-eb67-4af6-9b96-18d4ac627a1f
+    - !<reference> 64bb865d-89f7-4dc5-ac76-ed455bdda91f
   Mesh: !<reference> 43d75f00-2422-4bdb-a5ee-ec2258dddcaf
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -16232,7 +16602,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -5.850200, y: -3.234452, z: 0.010002}
+    Position: {x: -5.850200, y: -3.234452, z: 0.050000}
     Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
     Scale: {x: 4.500000, y: 1.000000, z: 0.400000}
     HasSegmentScaleCompensation: false
@@ -16275,7 +16645,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -16451,7 +16821,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -6.000000, y: -6.643548, z: 0.009999}
+    Position: {x: -6.000000, y: -6.643548, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -16497,7 +16867,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 7.920361, y: 3.268410, z: 0.010000}
+    Position: {x: 7.920361, y: 3.268410, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 5.000000, y: 5.000000, z: 5.000000}
     HasSegmentScaleCompensation: false
@@ -16555,6 +16925,21 @@
     - !<own> 929164ef-2d41-474a-a457-1bf03d6cd9f1
   Components:
     []
+- !<SceneObject/ff26bf4b-a0cf-4b4a-b83d-17a3d70cfb62>
+  PrefabRemaps:
+    []
+  Name: Card BG 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.430716, y: 0.000000, z: 0.030000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 90.000000}
+    Scale: {x: 8.800000, y: 27.000000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 56514825-2059-439c-bfc2-673dd0793083
 - !<Text/ff6e8b3c-dad7-4198-b9d2-9b8f02861204>
   PrefabRemaps:
     []
