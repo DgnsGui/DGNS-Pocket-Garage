@@ -1465,7 +1465,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -2482,7 +2482,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -6235,7 +6235,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -6832,8 +6832,6 @@
   ScriptAsset: !<reference> 14ee4395-1e03-4a70-af4b-c6bdda5b7961
   ScriptInputsDefault:
     playPauseText: true
-    autoPlay: true
-    loopPlaylist: true
     narratorDuckMultiplier: true
   ScriptTypesDefault:
     {}
@@ -6850,9 +6848,9 @@
       nextTrackButton: !<reference.SceneObject> e43d87bb-07d4-4b66-934a-e2b3745f6e12
       playPauseText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       trackNameText: !<reference.Text> 5ee2a261-04d6-4132-853b-c8d08002d322
-      autoPlay: true
-      loopPlaylist: true
-      volume: !<float> 1.000000
+      autoPlay: false
+      loopPlaylist: false
+      volume: 0.700000
       narratorDuckMultiplier: 0.500000
   ScriptTypes:
     "":
@@ -7688,7 +7686,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -9560,7 +9558,7 @@
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
   SizeToFit: false
-  FontSize: 50
+  FontSize: 35
   Font: !<reference> 00000000-0000-0000-0000-000000000000
   LayoutRect:
     left: -7.500000
@@ -9759,7 +9757,7 @@
       _playAudioOnTriggerStart: false
       _triggerStartAudioTrack: !<reference.AudioTrackAsset> edad7d53-55da-40b1-9025-fad0e7207862
       _playAudioOnTriggerEnd: true
-      _triggerEndAudioTrack: !<reference.AudioTrackAsset> dc13cd32-2f23-4aa0-ac42-828b00f0421c
+      _triggerEndAudioTrack: !<reference.AudioTrackAsset> 82a7d6f7-8bb5-4772-8174-1defc5b5f6a2
   ScriptTypes:
     "":
       {}
@@ -10256,7 +10254,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -11193,7 +11191,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -11891,7 +11889,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 2
+  RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -12985,7 +12983,7 @@
     {}
   ScriptInputs:
     "":
-      _renderOrder: 1
+      _renderOrder: 2
       _inactive: false
       _playAudio: false
       _style: Primary
@@ -13706,7 +13704,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -14075,7 +14073,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 4.594776, y: -3.434978, z: 0.050000}
+    Position: {x: 3.764007, y: -3.538832, z: 0.050000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
@@ -15067,7 +15065,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -15224,7 +15222,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -16370,7 +16368,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 1
+  RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center

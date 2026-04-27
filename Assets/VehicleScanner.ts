@@ -89,6 +89,8 @@ export class VehicleScanner extends BaseScriptComponent {
     private latestDepthData: DepthFrameData | null = null;
     private cameraTexture: Texture;
     private isScanning: boolean = false;
+    private activeScanRequestId: number = 0;
+    private activeScanCount: number = 0;
     private _lastRejectionReason: string = '';
 
     // High quality base64 for GPT-4o analysis
@@ -124,24 +126,36 @@ export class VehicleScanner extends BaseScriptComponent {
      * Throws on fatal errors. Returns null if no vehicle detected.
      */
     async scanVehicle(): Promise<VehicleData | null> {
-        if (this.isScanning) {
-            print('VehicleScanner: Scan already in progress');
-            return null;
-        }
-
+        const requestId = ++this.activeScanRequestId;
+        this.activeScanCount++;
         this.isScanning = true;
         this._lastRejectionReason = '';
         try {
             // Step 1: Capture image
             print('VehicleScanner: Capturing image...');
             const base64Image = await this.captureImage();
+            if (requestId !== this.activeScanRequestId) {
+                print('VehicleScanner: Scan superseded after capture — ignoring old request #' + requestId);
+                return null;
+            }
 
             // Store for CollectionManager (real photo for Image Edit)
             this.lastCapturedBase64 = base64Image;
 
+            // Keep captured frame visible for user confirmation.
+            await this.delay(3.0);
+            if (requestId !== this.activeScanRequestId) {
+                print('VehicleScanner: Scan superseded during freeze preview — ignoring old request #' + requestId);
+                return null;
+            }
+
             // Step 2: Send to OpenAI for identification
             print('VehicleScanner: Sending to GPT-4o Vision...');
             const vehicleData = await this.analyzeVehicle(base64Image);
+            if (requestId !== this.activeScanRequestId) {
+                print('VehicleScanner: Scan superseded during analysis — ignoring old request #' + requestId);
+                return null;
+            }
 
             if (!vehicleData) {
                 print('VehicleScanner: No vehicle detected');
@@ -155,7 +169,8 @@ export class VehicleScanner extends BaseScriptComponent {
 
             return vehicleData;
         } finally {
-            this.isScanning = false;
+            this.activeScanCount = Math.max(0, this.activeScanCount - 1);
+            this.isScanning = this.activeScanCount > 0;
         }
     }
 

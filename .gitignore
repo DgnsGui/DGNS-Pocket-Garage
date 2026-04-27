@@ -14,5 +14,5 @@ Workspaces/**
 /tsconfig.json
 .DS_Store
 *.lock
-*.zip
+
 # Shipped by Lens Studio

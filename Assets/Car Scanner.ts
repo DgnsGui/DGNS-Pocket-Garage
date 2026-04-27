@@ -205,6 +205,8 @@ export class CarScanner extends BaseScriptComponent {
     private scanInterfaceCloseButtonConnected: boolean = false;
     private scannerButtonTextComp: Text | null = null;
     private isScanInProgress: boolean = false;
+    private scanRequestSeq: number = 0;
+    private latestScanRequestSeq: number = 0;
     private sfxMuted: boolean = false;
     private activeSfxState: 'none' | 'scan_wait' | 'card_wait' | 'review_wait' | 'oneshot' = 'none';
     private activeSfxTrack: AudioTrackAsset | null = null;
@@ -1018,7 +1020,9 @@ export class CarScanner extends BaseScriptComponent {
     // =====================================================================
 
     private async onScanButtonPressed(): Promise<void> {
-        if (!this.vehicleScanner || this.vehicleScanner.getIsScanning() || this.isScanInProgress) return;
+        if (!this.vehicleScanner) return;
+        const requestId = ++this.scanRequestSeq;
+        this.latestScanRequestSeq = requestId;
         this.isScanInProgress = true;
         this.startWaitingSfx(this.sfxScanWaiting, 'scan_wait');
 
@@ -1030,13 +1034,17 @@ export class CarScanner extends BaseScriptComponent {
 
         // Reset previous state
         if (this.vehicleNarrator) this.vehicleNarrator.hideDescription();
-        if (this.vehicleCardUI) this.vehicleCardUI.setUIState('loading', () => this.hideScanInterface());
+        if (this.vehicleCardUI) this.vehicleCardUI.setUIState('loading');
 
         const scanStartTime = Date.now();
         try {
             // Step 1+2+3: Capture, analyze, position (all inside VehicleScanner)
             const vehicleData = await this.vehicleScanner.scanVehicle();
             const scanDurationMs = Date.now() - scanStartTime;
+            if (requestId !== this.latestScanRequestSeq) {
+                print('CarScanner: Ignoring stale scan result #' + requestId + ' (latest=' + this.latestScanRequestSeq + ')');
+                return;
+            }
 
             if (!vehicleData) {
                 this.stopWaitingSfx('scan_wait');
@@ -1083,13 +1091,16 @@ export class CarScanner extends BaseScriptComponent {
             }
 
         } catch (error) {
+            if (requestId !== this.latestScanRequestSeq) return;
             this.stopWaitingSfx('scan_wait');
             print('CarScanner: Scan error: ' + error);
             if (this.vehicleNarrator) this.vehicleNarrator.showStatusError(t('scan_failed'));
             if (this.analyticsManager) this.analyticsManager.logError('scan', String(error));
         } finally {
-            this.isScanInProgress = false;
-            if (this.connectedLensManager) this.connectedLensManager.setLocalScanning(false);
+            if (requestId === this.latestScanRequestSeq) {
+                this.isScanInProgress = false;
+                if (this.connectedLensManager) this.connectedLensManager.setLocalScanning(false);
+            }
         }
     }
 

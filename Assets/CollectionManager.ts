@@ -241,6 +241,21 @@ export class CollectionManager extends BaseScriptComponent {
 
     // Last captured photo (Base64, compressed) — used for OpenAI Image Edit (gpt-image-1)
     private lastCapturedBase64: string = '';
+    // Per-card source photo kept for deferred retry when first image generation fails.
+    private deferredImageSourceBySerial: { [serial: string]: string } = {};
+    // Guard against double-trigger on "Generate Image Afterwards" button.
+    private deferredImageGenerationInFlightBySerial: { [serial: string]: boolean } = {};
+    // Live UI status for in-card "Image Gen Please Wait..." labels.
+    private imageGenUiBySerial: {
+        [serial: string]: {
+            cardObj: SceneObject;
+            startedAt: number;
+            attempt: number;
+            total: number;
+            phase: string;
+            event: SceneEvent | null;
+        };
+    } = {};
 
     // Trade history — persistent log of all trades
     private tradeHistory: TradeHistoryEntry[] = [];
@@ -253,6 +268,7 @@ export class CollectionManager extends BaseScriptComponent {
         capturedBase64: string;
         resolve: (tex: Texture) => void;
         reject: (err: any) => void;
+        onProgress?: (attempt: number, total: number, phase: string) => void;
     }> = [];
     private _imageQueueProcessing: boolean = false;
 
@@ -712,6 +728,13 @@ export class CollectionManager extends BaseScriptComponent {
         // Cancel all active operations before destroying data
         this._imageQueue = [];
         this._imageQueueProcessing = false;
+        this.deferredImageSourceBySerial = {};
+        this.deferredImageGenerationInFlightBySerial = {};
+        const uiKeys = Object.keys(this.imageGenUiBySerial);
+        for (let i = 0; i < uiKeys.length; i++) {
+            this.stopImageGenLiveStatus(uiKeys[i], false, '');
+        }
+        this.imageGenUiBySerial = {};
         this.isSavingCard = false;
         this.isRevealAnimating = false;
         if (this.revealAnimEvent) {
@@ -816,6 +839,11 @@ export class CollectionManager extends BaseScriptComponent {
 
         // Cloud delete (fire-and-forget)
         if (serial && this.onCloudDeleteVehicle) this.onCloudDeleteVehicle(serial);
+        if (serial) {
+            this.deferredImageSourceBySerial[serial] = '';
+            this.deferredImageGenerationInFlightBySerial[serial] = false;
+            this.stopImageGenLiveStatus(serial, false, '');
+        }
 
         // Destroy SceneObject
         const card = this.collectionCardObjects[idx];
@@ -1114,72 +1142,52 @@ export class CollectionManager extends BaseScriptComponent {
 
             const showStatus = this.onShowCardStatus || this.onShowAnimatedDescription;
             const hideStatus = this.onHideCardStatus || null;
-            if (showStatus) showStatus(t('generating_card') + '...');
-            if (this.onCardGenerationStarted) this.onCardGenerationStarted();
-
-            this.queueImageGeneration(savedData).then((texture) => {
-                const revealRoot = this.getOrCreateRevealParent();
-                const cardObj = this.verticalCardPrefab.instantiate(revealRoot);
-                if (!cardObj) {
-                    if (showStatus) showStatus(t('card_instantiation_fail'));
-                    if (hideStatus) hideStatus(4.0);
-                    this.isSavingCard = false;
-                    return;
-                }
-
-                this.populateCollectorCard(cardObj, savedData);
-
-                if (texture) {
-                    this.applyCardImage(cardObj, texture);
-                    savedData.imageGenerated = true;
-                    this.saveCollectionToStorage();
-                    this.saveCardImageToStorage(vehicleName, savedData.savedAt, texture, savedData.serial);
-                }
-
-                if (showStatus) showStatus(tf('card_ready', { name: vehicleName }));
-                if (this.onCardGenerationSuccess) this.onCardGenerationSuccess();
-
-                this.playCardRevealAnimation(cardObj, vehicleName, () => {
-                    this.ensureCollectionRoot();
-                    if (this.collectionRoot) {
-                        cardObj.setParent(this.collectionRoot);
-                        const t = cardObj.getTransform();
-                        t.setLocalPosition(vec3.zero());
-                        t.setLocalRotation(quat.fromEulerAngles(0, 0, 0));
-                        const s = this.cardInteraction ? this.cardInteraction.collectionCardScale : 0.18;
-                        t.setLocalScale(new vec3(s, s, s));
-                    }
-                    cardObj.enabled = false;
-                    this.collectionCardObjects.push(cardObj);
-                    this.cardStates.push(this.STATE_IN_COLLECTION);
-                    this.cardImageReady.push(texture != null);
-                    this.cardFrameHooked.push(false);
-                    this.reviewButtonHooked.push(false);
-                    this.syncInteractionState();
-                    if (this.cardInteraction) {
-                        this.cardInteraction.hookCardFrameEvents(cardObj, this.collectionCardObjects.length - 1);
-                    }
-                    this.isSavingCard = false;
-                    this.updateCollectionButtonLabel();
-                    if (showStatus) showStatus(tf('added_to_collection', { name: vehicleName, count: this.savedVehicles.length }));
-                    if (hideStatus) hideStatus(2.5);
-
-                    // Notify orchestrator for XP attribution
-                    if (this.onCardSaved) this.onCardSaved(savedData);
-                });
-            }).catch((err) => {
-                const errMsg = typeof err === 'string' ? err : (err && err.message ? err.message : JSON.stringify(err));
-                print('CollectionManager: [SAVE] Image generation FAILED: ' + errMsg);
-                const idx = this.savedVehicles.indexOf(savedData);
-                if (idx >= 0) {
-                    this.savedVehicles.splice(idx, 1);
-                    this.saveCollectionToStorage();
-                }
-                if (showStatus) showStatus(t('card_gen_failed'));
-                if (hideStatus) hideStatus(6.0);
-                if (this.onCardGenerationFailed) this.onCardGenerationFailed();
+            const revealRoot = this.getOrCreateRevealParent();
+            const cardObj = this.verticalCardPrefab.instantiate(revealRoot);
+            if (!cardObj) {
+                if (showStatus) showStatus(t('card_instantiation_fail'));
+                if (hideStatus) hideStatus(4.0);
                 this.isSavingCard = false;
+                return;
+            }
+
+            // Keep source photo for deferred generation/retry.
+            this.deferredImageSourceBySerial[savedData.serial] = this.lastCapturedBase64 || '';
+            this.populateCollectorCard(cardObj, savedData);
+            this.updateGenerateImageAfterButton(cardObj, savedData);
+
+            // Give the card immediately; image generation continues in background.
+            this.playCardRevealAnimation(cardObj, vehicleName, () => {
+                this.ensureCollectionRoot();
+                if (this.collectionRoot) {
+                    cardObj.setParent(this.collectionRoot);
+                    const t = cardObj.getTransform();
+                    t.setLocalPosition(vec3.zero());
+                    t.setLocalRotation(quat.fromEulerAngles(0, 0, 0));
+                    const s = this.cardInteraction ? this.cardInteraction.collectionCardScale : 0.18;
+                    t.setLocalScale(new vec3(s, s, s));
+                }
+                cardObj.enabled = false;
+                this.collectionCardObjects.push(cardObj);
+                this.cardStates.push(this.STATE_IN_COLLECTION);
+                this.cardImageReady.push(savedData.imageGenerated === true);
+                this.cardFrameHooked.push(false);
+                this.reviewButtonHooked.push(false);
+                this.syncInteractionState();
+                if (this.cardInteraction) {
+                    this.cardInteraction.hookCardFrameEvents(cardObj, this.collectionCardObjects.length - 1);
+                }
+                this.isSavingCard = false;
+                this.updateCollectionButtonLabel();
+                if (showStatus) showStatus(tf('added_to_collection', { name: vehicleName, count: this.savedVehicles.length }));
+                if (hideStatus) hideStatus(2.5);
+
+                // Notify orchestrator for XP attribution immediately.
+                if (this.onCardSaved) this.onCardSaved(savedData);
             });
+
+            // Start background generation right away; do not block save/reveal flow.
+            this.generateMissingImageForCard(cardObj, savedData);
         } catch (error) {
             if (this.onShowDescription) this.onShowDescription(tf('save_error', { error: String(error) }));
             this.isSavingCard = false;
@@ -1225,6 +1233,9 @@ export class CollectionManager extends BaseScriptComponent {
             if (!this.cardImageReady[i]) {
                 const cardImageObj = findChildByName(card, 'Card Image');
                 if (cardImageObj) cardImageObj.enabled = false;
+            }
+            if (i < this.savedVehicles.length) {
+                this.updateGenerateImageAfterButton(card, this.savedVehicles[i]);
             }
 
             // Re-apply stat bars after enableAllDescendants (stats fix)
@@ -1471,6 +1482,11 @@ export class CollectionManager extends BaseScriptComponent {
 
         // Cloud delete (fire-and-forget)
         if (this.onCloudDeleteVehicle) this.onCloudDeleteVehicle(serial);
+        if (serial) {
+            this.deferredImageSourceBySerial[serial] = '';
+            this.deferredImageGenerationInFlightBySerial[serial] = false;
+            this.stopImageGenLiveStatus(serial, false, '');
+        }
 
         // Destroy the SceneObject
         if (idx < this.collectionCardObjects.length && this.collectionCardObjects[idx]) {
@@ -1681,6 +1697,15 @@ export class CollectionManager extends BaseScriptComponent {
         }
     }
 
+    private resolveBrandForLogo(data: SavedVehicleData): string {
+        const directBrand = (data.brand || '').trim();
+        if (directBrand.length > 0) return directBrand;
+        const model = (data.brand_model || '').trim();
+        if (model.length === 0) return '';
+        const split = model.split(' ');
+        return split.length > 0 ? (split[0] || '').trim() : '';
+    }
+
     private populateCollectorCard(cardObj: SceneObject, data: SavedVehicleData): void {
         const set = (childName: string, text: string) => {
             const obj = findChildByName(cardObj, childName);
@@ -1723,11 +1748,16 @@ export class CollectionManager extends BaseScriptComponent {
         this.updateStatBar(findChildByName(cardObj, 'Traction Bar'), data.traction);
         this.updateStatBar(findChildByName(cardObj, 'Comfort Bar'), data.comfort);
 
+        // Card image should only be visible when a generated image exists.
+        const cardImageObj = findChildByName(cardObj, 'Card Image');
+        if (cardImageObj) cardImageObj.enabled = !!data.imageGenerated;
+
         // Brand logo
-        if (data.brand && this.brandLogoLoader) {
+        const brandForLogo = this.resolveBrandForLogo(data);
+        if (brandForLogo.length > 0 && this.brandLogoLoader) {
             const logoObj = findChildByName(cardObj, 'Car Brand Logo');
             if (logoObj) {
-                const logoUrl = this.brandLogoLoader.getBrandLogoUrl(data.brand);
+                const logoUrl = this.brandLogoLoader.getBrandLogoUrl(brandForLogo);
                 if (logoUrl) this.brandLogoLoader.loadLogoOntoObject(logoObj, logoUrl);
             }
         }
@@ -1745,6 +1775,8 @@ export class CollectionManager extends BaseScriptComponent {
                 this.applyTrustColorToText(tc);
             }
         }
+
+        this.updateGenerateImageAfterButton(cardObj, data);
     }
 
     private applyTrustColorToText(textComp: Text): void {
@@ -1952,6 +1984,180 @@ export class CollectionManager extends BaseScriptComponent {
         if (applied) {
             const idx = this.collectionCardObjects.indexOf(cardObj);
             if (idx >= 0) this.cardImageReady[idx] = true;
+            if (idx >= 0 && idx < this.savedVehicles.length) {
+                this.savedVehicles[idx].imageGenerated = true;
+                this.setImageGenWaitText(cardObj, false, '');
+                this.updateGenerateImageAfterButton(cardObj, this.savedVehicles[idx]);
+            }
+        }
+    }
+
+    private updateGenerateImageAfterButton(cardObj: SceneObject, data: SavedVehicleData): void {
+        const buttonObj = findChildByName(cardObj, 'Generate Image Afterwards Button');
+        if (!buttonObj) return;
+
+        const inFlight = !!(data.serial && this.deferredImageGenerationInFlightBySerial[data.serial]);
+        buttonObj.enabled = !data.imageGenerated && !inFlight;
+        if (!inFlight) {
+            this.setImageGenWaitText(cardObj, false, '');
+        }
+
+        const marker = buttonObj as any;
+        if (marker.__dgnsGenerateAfterConnected) return;
+        marker.__dgnsGenerateAfterConnected = true;
+
+        const onPress = () => {
+            this.generateMissingImageForCard(cardObj, data);
+        };
+
+        if (this.onConnectButton) {
+            this.onConnectButton(buttonObj, onPress, 'GenerateImageAfter');
+        } else {
+            this.connectButtonFallback(buttonObj, onPress);
+        }
+    }
+
+    private connectButtonFallback(buttonObj: SceneObject, callback: () => void): boolean {
+        const scripts = buttonObj.getComponents('Component.ScriptComponent') as any[];
+        for (let i = 0; i < scripts.length; i++) {
+            const script = scripts[i];
+            if (!script) continue;
+            if (script.onButtonPinched && typeof script.onButtonPinched.add === 'function') {
+                script.onButtonPinched.add(() => callback());
+                return true;
+            }
+            if (script.onTriggerUp && typeof script.onTriggerUp.add === 'function') {
+                script.onTriggerUp.add(() => callback());
+                return true;
+            }
+            if (script.onTriggerEnd && typeof script.onTriggerEnd.add === 'function') {
+                script.onTriggerEnd.add(() => callback());
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private getCardIndexBySerial(serial: string): number {
+        if (!serial || serial.length === 0) return -1;
+        for (let i = 0; i < this.savedVehicles.length; i++) {
+            if (this.savedVehicles[i] && this.savedVehicles[i].serial === serial) return i;
+        }
+        return -1;
+    }
+
+    private setImageGenWaitText(cardObj: SceneObject, visible: boolean, text: string): void {
+        const waitObj = findChildByName(cardObj, 'Image Gen Please Wait...');
+        if (!waitObj) return;
+        waitObj.enabled = visible;
+        const waitText = waitObj.getComponent('Component.Text') as Text;
+        if (waitText && visible) waitText.text = text;
+    }
+
+    private startImageGenLiveStatus(cardObj: SceneObject, data: SavedVehicleData): void {
+        if (!data.serial || data.serial.length === 0) return;
+
+        const existing = this.imageGenUiBySerial[data.serial];
+        if (existing && existing.event) {
+            try { existing.event.enabled = false; } catch (e) { /* ignore */ }
+        }
+
+        const state = {
+            cardObj: cardObj,
+            startedAt: getTime(),
+            attempt: 0,
+            total: 5,
+            phase: 'queued',
+            event: null as SceneEvent | null,
+        };
+        this.imageGenUiBySerial[data.serial] = state;
+
+        const updateText = (): void => {
+            const elapsed = Math.max(0, Math.floor(getTime() - state.startedAt));
+            const attempt = Math.max(0, state.attempt);
+            const total = Math.max(1, state.total);
+            const status = 'Image Gen Please Wait...\nAttempt ' + attempt + '/' + total
+                + ' | ' + state.phase + '\nTime: ' + elapsed + 's';
+            this.setImageGenWaitText(state.cardObj, true, status);
+        };
+
+        updateText();
+        const ev = this.createEvent('UpdateEvent');
+        ev.bind(() => updateText());
+        state.event = ev;
+    }
+
+    private onImageGenProgress(serial: string, attempt: number, total: number, phase: string): void {
+        if (!serial || serial.length === 0) return;
+        const state = this.imageGenUiBySerial[serial];
+        if (!state) return;
+        state.attempt = attempt;
+        state.total = total;
+        state.phase = phase;
+    }
+
+    private stopImageGenLiveStatus(serial: string, keepVisible: boolean, finalText: string): void {
+        if (!serial || serial.length === 0) return;
+        const state = this.imageGenUiBySerial[serial];
+        if (!state) return;
+        if (state.event) {
+            try { state.event.enabled = false; } catch (e) { /* ignore */ }
+            state.event = null;
+        }
+        this.setImageGenWaitText(state.cardObj, keepVisible, finalText);
+        if (!keepVisible) {
+            delete this.imageGenUiBySerial[serial];
+        }
+    }
+
+    private async generateMissingImageForCard(cardObj: SceneObject, data: SavedVehicleData): Promise<void> {
+        if (data.imageGenerated) {
+            this.updateGenerateImageAfterButton(cardObj, data);
+            return;
+        }
+        if (!data.serial || data.serial.length === 0) return;
+        if (this.deferredImageGenerationInFlightBySerial[data.serial]) return;
+
+        const sourceB64 = this.deferredImageSourceBySerial[data.serial];
+        if (!sourceB64 || sourceB64.length === 0) {
+            if (this.onShowDescription) this.onShowDescription(t('no_captured_photo'));
+            if (this.onHideDescriptionAfterDelay) this.onHideDescriptionAfterDelay(3.0);
+            return;
+        }
+
+        this.deferredImageGenerationInFlightBySerial[data.serial] = true;
+        this.startImageGenLiveStatus(cardObj, data);
+        this.updateGenerateImageAfterButton(cardObj, data);
+        const statusCb = this.onShowCardStatus || this.onShowAnimatedDescription || this.onShowDescription;
+
+        try {
+            if (statusCb) statusCb(t('generating_card') + '...');
+            if (this.onCardGenerationStarted) this.onCardGenerationStarted();
+            const texture = await this.queueImageGeneration(data, sourceB64, (attempt, total, phase) => {
+                this.onImageGenProgress(data.serial, attempt, total, phase);
+            });
+            this.applyCardImage(cardObj, texture);
+            data.imageGenerated = true;
+            this.saveCollectionToStorage();
+            this.saveCardImageToStorage(data.brand_model || 'Unknown', data.savedAt, texture, data.serial);
+            this.deferredImageSourceBySerial[data.serial] = '';
+            const idx = this.getCardIndexBySerial(data.serial);
+            if (idx >= 0) this.cardImageReady[idx] = true;
+            this.updateGenerateImageAfterButton(cardObj, data);
+            if (statusCb) statusCb(tf('card_ready', { name: data.brand_model || 'Vehicle' }));
+            if (this.onCardGenerationSuccess) this.onCardGenerationSuccess();
+            if (this.onHideCardStatus) this.onHideCardStatus(2.5);
+            this.stopImageGenLiveStatus(data.serial, false, '');
+        } catch (err) {
+            const errMsg = typeof err === 'string' ? err : (err && err.message ? err.message : JSON.stringify(err));
+            print('CollectionManager: [DEFERRED-IMG] Failed for ' + (data.brand_model || '?') + ': ' + errMsg);
+            if (statusCb) statusCb(t('card_gen_failed'));
+            if (this.onCardGenerationFailed) this.onCardGenerationFailed();
+            if (this.onHideCardStatus) this.onHideCardStatus(4.0);
+            this.stopImageGenLiveStatus(data.serial, false, '');
+        } finally {
+            this.deferredImageGenerationInFlightBySerial[data.serial] = false;
+            this.updateGenerateImageAfterButton(cardObj, data);
         }
     }
 
@@ -2041,7 +2247,10 @@ export class CollectionManager extends BaseScriptComponent {
      *   - 5 attempts: gpt-image-1 (x3) then dall-e-2 fallback (x2)
      *   - Increasing delay between attempts (2s, 3s, 4s, 5s)
      */
-    private async generateVehicleCardImage(data: SavedVehicleData): Promise<Texture> {
+    private async generateVehicleCardImage(
+        data: SavedVehicleData,
+        onProgress?: (attempt: number, total: number, phase: string) => void
+    ): Promise<Texture> {
         if (!this.lastCapturedBase64 || this.lastCapturedBase64.length === 0) {
             print('CollectionManager: [IMG-EDIT] No captured photo available — cannot create card');
             if (this.onShowDescription) this.onShowDescription(t('no_captured_photo'));
@@ -2054,6 +2263,10 @@ export class CollectionManager extends BaseScriptComponent {
 
         const bgScene = this.pickRandomBackground();
         const editPrompt = 'Keep the vehicle in the foreground exactly as it appears in the photo — '
+    + 'MANDATORY LICENSE PLATE SAFETY: Do not reproduce any real license plate text. '
+    + 'Replace all visible license plates with generic white plates. '
+    + 'The main vehicle plate must read exactly "DGNS" in a bold geometric sans-serif style similar to Futura Bold, centered and legible. '
+    + 'No other plate characters or numbers may remain anywhere in the image. '            
     + 'MANDATORY FRAMING: The entire vehicle must be fully inside the frame (front/rear bumpers, roofline, all wheels, and mirrors visible). '
     + 'Do not crop or cut off any part of the car. Keep approximately 8–12% margin around the whole vehicle on all sides. '
     + 'If necessary, reframe/zoom out to ensure full-car visibility while preserving true vehicle proportions and perspective.';
@@ -2061,10 +2274,6 @@ export class CollectionManager extends BaseScriptComponent {
     + 'Replace ONLY the background with a professional automotive photography scene: '
     + bgScene + ' '
     + 'Sharp focus on the car, cinematic depth of field on the background, natural lighting, magazine quality. '
-    + 'MANDATORY LICENSE PLATE SAFETY: Do not reproduce any real license plate text. '
-    + 'Replace all visible license plates with generic white plates. '
-    + 'The main vehicle plate must read exactly "DGNS" in a bold geometric sans-serif style similar to Futura Bold, centered and legible. '
-    + 'No other plate characters or numbers may remain anywhere in the image. '
         let imageBytes: Uint8Array;
         try {
             imageBytes = Base64.decode(this.lastCapturedBase64);
@@ -2085,10 +2294,12 @@ export class CollectionManager extends BaseScriptComponent {
 
         let response: any;
         let lastError = '';
+        const totalAttempts = attempts.length;
 
         for (let i = 0; i < attempts.length; i++) {
             const { model, size } = attempts[i];
             const attempt = i + 1;
+            if (onProgress) onProgress(attempt, totalAttempts, 'requesting');
 
             try {
                 print('CollectionManager: [IMG-EDIT] Attempt ' + attempt + '/' + attempts.length
@@ -2130,6 +2341,7 @@ export class CollectionManager extends BaseScriptComponent {
 
                 if (i < attempts.length - 1) {
                     const delaySec = 2 + i;
+                    if (onProgress) onProgress(attempt, totalAttempts, 'retry in ' + delaySec + 's');
                     print('CollectionManager: [IMG-EDIT] Waiting ' + delaySec + 's before retry...');
                     await this.delay(delaySec);
                 }
@@ -2191,15 +2403,19 @@ export class CollectionManager extends BaseScriptComponent {
      */
     private readonly MAX_IMAGE_QUEUE: number = 5;
 
-    private queueImageGeneration(data: SavedVehicleData): Promise<Texture> {
+    private queueImageGeneration(
+        data: SavedVehicleData,
+        capturedBase64Override?: string,
+        onProgress?: (attempt: number, total: number, phase: string) => void
+    ): Promise<Texture> {
         if (this._imageQueue.length >= this.MAX_IMAGE_QUEUE) {
             print('CollectionManager: [QUEUE] Image queue full (' + this.MAX_IMAGE_QUEUE + ') — rejecting');
             if (this.onShowDescription) this.onShowDescription(t('image_gen_busy'));
             return Promise.reject(new Error('Image queue full'));
         }
-        const capturedBase64 = this.lastCapturedBase64;
+        const capturedBase64 = capturedBase64Override || this.lastCapturedBase64;
         return new Promise<Texture>((resolve, reject) => {
-            this._imageQueue.push({ data, capturedBase64, resolve, reject });
+            this._imageQueue.push({ data, capturedBase64, resolve, reject, onProgress });
             print('CollectionManager: [QUEUE] Added to image queue — depth=' + this._imageQueue.length);
             this.processImageQueue();
         });
@@ -2216,7 +2432,7 @@ export class CollectionManager extends BaseScriptComponent {
             const prevBase64 = this.lastCapturedBase64;
             this.lastCapturedBase64 = item.capturedBase64;
             try {
-                const tex = await this.generateVehicleCardImage(item.data);
+                const tex = await this.generateVehicleCardImage(item.data, item.onProgress);
                 item.resolve(tex);
             } catch (e) {
                 item.reject(e);
@@ -2286,6 +2502,11 @@ export class CollectionManager extends BaseScriptComponent {
             let needsResave = false;
             for (let i = 0; i < this.savedVehicles.length; i++) {
                 const v = this.savedVehicles[i];
+                const resolvedBrand = this.resolveBrandForLogo(v);
+                if ((!v.brand || v.brand.trim().length === 0) && resolvedBrand.length > 0) {
+                    v.brand = resolvedBrand;
+                    needsResave = true;
+                }
                 if (!v.serial || v.serial.length === 0) {
                     v.serial = generateSerial();
                     needsResave = true;
