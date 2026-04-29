@@ -1,8 +1,8 @@
-- !<Material/4153b3d8-97e9-4fae-b678-18945bb1e896>
+- !<Material/fb611d74-526c-4489-8fc4-15e77e4e7e9b>
   PackagePath: ""
   PassesInfo:
-    - !<own> 96b758a4-1d29-4e28-941f-a236ab088eab
-- !<PassInfo/96b758a4-1d29-4e28-941f-a236ab088eab>
+    - !<own> 266e2102-4937-4b26-8f5c-f6e12f23eb82
+- !<PassInfo/266e2102-4937-4b26-8f5c-f6e12f23eb82>
   CachedProperties:
     - Port_Blue_N029:
         typeIdx: 4
@@ -103,33 +103,6 @@
     - alphaTestThreshold:
         typeIdx: 1
         value: 0.500000
-    - baseTexTransform:
-        typeIdx: 7
-        value:
-          0: {x: 1.000000, y: 0.000000, z: 0.000000}
-          1: {x: 0.000000, y: 1.000000, z: 0.000000}
-          2: {x: 0.000000, y: 0.000000, z: 1.000000}
-    - correctedIntensity:
-        typeIdx: 1
-        value: 0.000000
-    - intensityTexture:
-        typeIdx: 9
-        value:
-          id: 00000000-0000-0000-0000-000000000000
-          sampler:
-            filteringMode: Trilinear
-            wrapModeU: Repeat
-            wrapModeV: Repeat
-            wrapModeW: Repeat
-            borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
-            mipmaps: false
-          type: Texture2D
-    - intensityTextureTransform:
-        typeIdx: 7
-        value:
-          0: {x: 1.000000, y: 0.000000, z: 0.000000}
-          1: {x: 0.000000, y: 1.000000, z: 0.000000}
-          2: {x: 0.000000, y: 0.000000, z: 1.000000}
   DepthWrite: true
   DepthTest: true
   DepthFunction: LessEqual
@@ -146,7 +119,7 @@
     - NODE_27_DROPLIST_ITEM 0
     - NODE_49_DROPLIST_ITEM 0
     - NODE_69_DROPLIST_ITEM 0
-  BlendMode: Disabled
+  BlendMode: AlphaToCoverage
   Properties:
     PreviewEnabled:
       typeIdx: 0
@@ -157,7 +130,7 @@
     baseTex:
       typeIdx: 9
       value:
-        id: db95d51e-7d5a-49a5-96ca-9795ab06773d
+        id: 1af344d2-6dd7-4597-a4c7-50c3172559a5
         sampler:
           filteringMode: Trilinear
           wrapModeU: Repeat

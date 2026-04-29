@@ -14,58 +14,58 @@ dock:
             type: section
             current: 0
         sizes:
-          - 820
-          - 313
+          - 681
+          - 452
         type: splitter
         orientation: vertical
       - items:
           - items:
               - items:
+                  - persistentName: Snap.Plugin.Gui.Graph.Editor
+                    Uuid: d5ed4507-a3ab-4f4b-8e4e-4c104276564d
                   - persistentName: Snap.Plugin.Gui.SceneEditor
                     Uuid: a14d85d7-9a15-42a6-913e-3f24dea267c2
-                  - persistentName: Snap.Plugin.AssistantAI.Panel
-                    Uuid: df91b2cf-37e1-401c-83fc-3d9f83343e71
                 type: section
-                current: 1
+                current: 0
               - items:
                   - persistentName: Snap.Plugin.Gui.InspectorPanel
                     Uuid: 780d9164-e681-4de1-b586-5213ed5523b9
                 type: section
                 current: 0
             sizes:
-              - 644
-              - 507
+              - 520
+              - 455
             type: splitter
             orientation: horizontal
           - items:
-              - persistentName: Snap.Plugin.Gui.LoggerPanel
-                Uuid: 81de965d-0c94-4d28-82cf-901740003a1f
-            type: section
-            current: 0
+              - items:
+                  - persistentName: Snap.Plugin.Gui.LoggerPanel
+                    Uuid: 81de965d-0c94-4d28-82cf-901740003a1f
+                type: section
+                current: 0
+              - items:
+                  - persistentName: snap.plugin.gui.typescript_status_panel
+                    Uuid: 579fabff-024b-4517-bbed-94994443ed73
+                type: section
+                current: 0
+            sizes:
+              - 708
+              - 267
+            type: splitter
+            orientation: horizontal
         sizes:
-          - 953
-          - 180
+          - 877
+          - 256
         type: splitter
         orientation: vertical
       - items:
-          - items:
-              - persistentName: Snap.Plugin.Gui.PreviewPanel
-                Uuid: 272e6db4-a2c6-41cf-bdc9-cd0ce5001e42
-            type: section
-            current: 0
-          - items:
-              - persistentName: snap.plugin.gui.typescript_status_panel
-                Uuid: 579fabff-024b-4517-bbed-94994443ed73
-            type: section
-            current: 0
-        sizes:
-          - 995
-          - 138
-        type: splitter
-        orientation: vertical
+          - persistentName: Snap.Plugin.Gui.PreviewPanel
+            Uuid: 272e6db4-a2c6-41cf-bdc9-cd0ce5001e42
+        type: section
+        current: 0
     sizes:
-      - 366
-      - 1154
-      - 514
+      - 367
+      - 978
+      - 689
     type: splitter
     orientation: horizontal

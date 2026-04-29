@@ -166,6 +166,10 @@ export class CollectionManager extends BaseScriptComponent {
     @hint('Maximum number of cards in collection. Default: 25. Increase for premium users.')
     maxCollectionSize: number = 25;
 
+    @input
+    @hint('Use DALL-E 3 as primary image generator (skips gpt-image-1 Image Edit). Enable if gpt-image-1 fails with proxy errors.')
+    useDalle3ByDefault: boolean = false;
+
     // =====================================================================
     // CALLBACKS — Set by orchestrator
     // =====================================================================
@@ -216,7 +220,9 @@ export class CollectionManager extends BaseScriptComponent {
     // CONSTANTS
     // =====================================================================
     private readonly STORAGE_KEY: string = 'dgns_vehicle_collection';
+    private readonly STORAGE_KEY_BACKUP: string = 'dgns_vehicle_collection_bak';
     private readonly IMAGE_KEY_PREFIX: string = 'dgns_img_';
+    private readonly RAW_PHOTO_KEY_PREFIX: string = 'dgns_raw_';
     private readonly TRADE_HISTORY_KEY: string = 'dgns_trade_history';
     private readonly HTTP_USER_AGENT: string = 'LensStudio/5.15 SnapSpectacles CarScanner/1.0';
 
@@ -764,12 +770,13 @@ export class CollectionManager extends BaseScriptComponent {
             }
         }
 
-        // Clear stored images
+        // Clear stored images and raw photos
         for (let i = 0; i < this.savedVehicles.length; i++) {
             const savedAt = this.savedVehicles[i]?.savedAt;
             if (savedAt) {
                 try {
                     global.persistentStorageSystem.store.putString(this.IMAGE_KEY_PREFIX + savedAt.toString(), '');
+                    global.persistentStorageSystem.store.putString(this.RAW_PHOTO_KEY_PREFIX + savedAt.toString(), '');
                 } catch (e) { /* ignore */ }
             }
         }
@@ -855,10 +862,11 @@ export class CollectionManager extends BaseScriptComponent {
             }
         }
 
-        // Clear stored image
+        // Clear stored image and raw photo
         if (savedAt) {
             try {
                 global.persistentStorageSystem.store.putString(this.IMAGE_KEY_PREFIX + savedAt.toString(), '');
+                global.persistentStorageSystem.store.putString(this.RAW_PHOTO_KEY_PREFIX + savedAt.toString(), '');
             } catch (e) { /* ignore */ }
         }
 
@@ -1132,10 +1140,28 @@ export class CollectionManager extends BaseScriptComponent {
                 cityScanned: this.cachedCity,
             };
 
+            // ─── ATOMIC PERSIST BEFORE ANYTHING ELSE ────────────────────────
+            // Store the photo raw bytes immediately so that even a hard sleep/kill
+            // right after this point cannot lose the card or its source photo.
+            const rawPhotoB64 = this.lastCapturedBase64 || '';
+            this.deferredImageSourceBySerial[savedData.serial] = rawPhotoB64;
+            if (rawPhotoB64.length > 0) {
+                try {
+                    global.persistentStorageSystem.store.putString(
+                        this.RAW_PHOTO_KEY_PREFIX + savedData.savedAt.toString(), rawPhotoB64
+                    );
+                    print('CollectionManager: Raw photo persisted for ' + savedData.serial
+                        + ' (' + Math.round(rawPhotoB64.length * 0.75 / 1024) + ' KB)');
+                } catch (e) {
+                    print('CollectionManager: Failed to persist raw photo: ' + e);
+                }
+            }
+
+            this.savedVehicles.push(savedData);
+            this.saveCollectionToStorage();  // JSON + backup both written here
             print('CollectionManager: Card saved — serial=' + savedData.serial
                 + ' date="' + savedData.dateScanned + '" city="' + savedData.cityScanned + '"');
-            this.savedVehicles.push(savedData);
-            this.saveCollectionToStorage();
+            // ────────────────────────────────────────────────────────────────
 
             // Cloud sync (fire-and-forget)
             if (this.onCloudSyncVehicle) this.onCloudSyncVehicle(savedData);
@@ -1151,42 +1177,42 @@ export class CollectionManager extends BaseScriptComponent {
                 return;
             }
 
-            // Keep source photo for deferred generation/retry.
-            this.deferredImageSourceBySerial[savedData.serial] = this.lastCapturedBase64 || '';
+            // Populate card text/stats
             this.populateCollectorCard(cardObj, savedData);
+
+            // Card Image always visible (shows placeholder gif).
+            // Show "Image Gen Please Wait..." immediately and hide the Generate button.
+            this.startImageGenLiveStatus(cardObj, savedData);
             this.updateGenerateImageAfterButton(cardObj, savedData);
 
-            // Give the card immediately; image generation continues in background.
+            // Push to parallel arrays NOW (before animation) so a sleep during
+            // the reveal cannot lose the card from collectionCardObjects.
+            // The card stays under revealParent during the animation; startFlyToCollection
+            // will reparent it to collectionRoot at the end.
+            this.ensureCollectionRoot();
+            cardObj.enabled = false;
+            this.collectionCardObjects.push(cardObj);
+            this.cardStates.push(this.STATE_IN_COLLECTION);
+            this.cardImageReady.push(false);
+            this.cardFrameHooked.push(false);
+            this.reviewButtonHooked.push(false);
+            if (this.cardInteraction) {
+                this.cardInteraction.hookCardFrameEvents(cardObj, this.collectionCardObjects.length - 1);
+            }
+            this.syncInteractionState();
+            this.updateCollectionButtonLabel();
+
+            // XP attribution immediately — no longer waiting for animation end
+            if (this.onCardSaved) this.onCardSaved(savedData);
+
+            // Reveal animation — onComplete just unlocks isSavingCard, all data already safe
             this.playCardRevealAnimation(cardObj, vehicleName, () => {
-                this.ensureCollectionRoot();
-                if (this.collectionRoot) {
-                    cardObj.setParent(this.collectionRoot);
-                    const t = cardObj.getTransform();
-                    t.setLocalPosition(vec3.zero());
-                    t.setLocalRotation(quat.fromEulerAngles(0, 0, 0));
-                    const s = this.cardInteraction ? this.cardInteraction.collectionCardScale : 0.18;
-                    t.setLocalScale(new vec3(s, s, s));
-                }
-                cardObj.enabled = false;
-                this.collectionCardObjects.push(cardObj);
-                this.cardStates.push(this.STATE_IN_COLLECTION);
-                this.cardImageReady.push(savedData.imageGenerated === true);
-                this.cardFrameHooked.push(false);
-                this.reviewButtonHooked.push(false);
-                this.syncInteractionState();
-                if (this.cardInteraction) {
-                    this.cardInteraction.hookCardFrameEvents(cardObj, this.collectionCardObjects.length - 1);
-                }
                 this.isSavingCard = false;
-                this.updateCollectionButtonLabel();
                 if (showStatus) showStatus(tf('added_to_collection', { name: vehicleName, count: this.savedVehicles.length }));
                 if (hideStatus) hideStatus(2.5);
-
-                // Notify orchestrator for XP attribution immediately.
-                if (this.onCardSaved) this.onCardSaved(savedData);
             });
 
-            // Start background generation right away; do not block save/reveal flow.
+            // Launch image generation (photo already persisted above)
             this.generateMissingImageForCard(cardObj, savedData);
         } catch (error) {
             if (this.onShowDescription) this.onShowDescription(tf('save_error', { error: String(error) }));
@@ -1229,11 +1255,7 @@ export class CollectionManager extends BaseScriptComponent {
             card.enabled = true;
             enableAllDescendants(card);
 
-            // Hide card images whose texture hasn't loaded yet (BUG 1 fix)
-            if (!this.cardImageReady[i]) {
-                const cardImageObj = findChildByName(card, 'Card Image');
-                if (cardImageObj) cardImageObj.enabled = false;
-            }
+            // Card Image always stays visible (shows placeholder gif until real image loads)
             if (i < this.savedVehicles.length) {
                 this.updateGenerateImageAfterButton(card, this.savedVehicles[i]);
             }
@@ -2126,7 +2148,11 @@ export class CollectionManager extends BaseScriptComponent {
         }
 
         this.deferredImageGenerationInFlightBySerial[data.serial] = true;
-        this.startImageGenLiveStatus(cardObj, data);
+        // Only start live status if not already running (it may have been started
+        // by onSaveButtonPressed before the animation plays)
+        if (!this.imageGenUiBySerial[data.serial]) {
+            this.startImageGenLiveStatus(cardObj, data);
+        }
         this.updateGenerateImageAfterButton(cardObj, data);
         const statusCb = this.onShowCardStatus || this.onShowAnimatedDescription || this.onShowDescription;
 
@@ -2141,6 +2167,12 @@ export class CollectionManager extends BaseScriptComponent {
             this.saveCollectionToStorage();
             this.saveCardImageToStorage(data.brand_model || 'Unknown', data.savedAt, texture, data.serial);
             this.deferredImageSourceBySerial[data.serial] = '';
+            // Raw photo no longer needed — free persistent storage space
+            try {
+                global.persistentStorageSystem.store.putString(
+                    this.RAW_PHOTO_KEY_PREFIX + data.savedAt.toString(), ''
+                );
+            } catch (e) { /* ignore */ }
             const idx = this.getCardIndexBySerial(data.serial);
             if (idx >= 0) this.cardImageReady[idx] = true;
             this.updateGenerateImageAfterButton(cardObj, data);
@@ -2180,6 +2212,22 @@ export class CollectionManager extends BaseScriptComponent {
         } catch (e) { /* ignore */ }
     }
 
+    /**
+     * Restores the raw captured photo from PersistentStorage into RAM so that
+     * the "Generate Image" button works after a session restart.
+     */
+    private loadRawPhotoFromStorage(serial: string, savedAt: number): void {
+        try {
+            const b64 = global.persistentStorageSystem.store.getString(
+                this.RAW_PHOTO_KEY_PREFIX + savedAt.toString()
+            );
+            if (!b64 || b64.length === 0) return;
+            this.deferredImageSourceBySerial[serial] = b64;
+            print('CollectionManager: Restored raw photo for ' + serial
+                + ' (' + Math.round(b64.length * 0.75 / 1024) + ' KB)');
+        } catch (e) { /* ignore */ }
+    }
+
     private loadCardImageFromStorage(vehicleName: string, savedAt: number, cardObj: SceneObject): boolean {
         try {
             const storageKey = this.IMAGE_KEY_PREFIX + savedAt.toString();
@@ -2200,31 +2248,18 @@ export class CollectionManager extends BaseScriptComponent {
     // =====================================================================
 
     private readonly PHOTO_BACKGROUNDS: string[] = [
-        'A sun-drenched Mediterranean coastal road winding along turquoise cliffs, golden hour light, professional automotive photography.',
-        'A winding mountain pass at dawn, low mist rolling across the asphalt, dramatic peaks in the background, editorial car shoot style.',
-        'A rain-slicked city street at twilight, neon reflections on wet asphalt, moody urban automotive photography.',
-        'An endless straight road through golden wheat fields under dramatic skies, classic car magazine centerfold composition.',
-        'A snowy Alpine village at dusk, warm lights from chalets, fresh powder on the road, luxury car brochure aesthetic.',
-        'A tropical coastal road at sunset, palm trees silhouetted against warm orange sky, premium car catalog photography.',
-        'An elegant tree-lined boulevard in autumn, golden leaves on the pavement, soft bokeh, high-end automotive press photo.',
-        'A vast desert highway cutting through red rock canyon formations, deep blue sky, adventure car magazine style.',
-        'A charming countryside lane in spring, wildflowers along the road, stone bridge in the background, classic motoring magazine shot.',
-        'An underground parking garage with dramatic directional lighting, concrete pillars, cinematic automotive ad style.',
-        'A coastal cliff road at sunset, ocean waves crashing below, warm side lighting, professional car review photoshoot.',
-        'A steep city street with colorful Victorian houses, morning fog, editorial urban car photography.',
-        'A rain-soaked European cobblestone street at night, warm street lamps reflecting in puddles, moody car ad aesthetic.',
-        'A colorful colonial street in warm Caribbean light, long afternoon shadows, vibrant lifestyle car photography.',
-        'A fjord-side road in summer, crystal-clear water reflecting mountains, pristine nature, Scandinavian car ad style.',
-        'A desert oasis at golden hour, sand dunes glowing amber in the background, exotic automotive photoshoot.',
-        'A tree-lined avenue in full spring bloom, petals drifting in the breeze, soft diffused light, luxury car brochure.',
-        'A dramatic stormy sky over an open plain, the road ahead lit by a golden break in the clouds, cinematic car photography.',
-        'A peaceful lakeside town at dawn, still water reflecting the sky, elegant automotive press release photo.',
-        'A modern city skyline at blue hour, glass towers reflecting twilight, an elevated highway, futuristic car ad composition.',
-        'An oceanfront promenade at sunset, pastel-colored buildings, warm pink sky, lifestyle car magazine editorial.',
-        'A highland road through heather-covered moors, dramatic moody sky with sun patches, rugged car brochure aesthetic.',
-        'A bamboo-lined forest road, tall green canopy, dappled sunlight, serene Japanese automotive photography.',
-        'A classic roadside gas station in the American desert, vintage feel, endless highway, retro car magazine editorial.',
-        'A frozen Nordic landscape at twilight, aurora borealis in the sky, snow-covered pines, premium winter car ad.',
+  'A clean sunlit coastal road with soft turquoise sea in the distance, premium automotive photography.',
+  'A winding mountain pass at dawn with light mist, dramatic but realistic car editorial style.',
+  'A rain-slicked city street at blue hour with subtle neon reflections, high-end automotive ad look.',
+  'A straight countryside road through golden fields under soft evening light, magazine-quality car shoot.',
+  'A snowy alpine road at dusk with warm distant chalet lights, luxury brochure aesthetic.',
+  'A tropical coastal boulevard at sunset with palm silhouettes, premium car catalog photography.',
+  'An elegant tree-lined boulevard in autumn with soft bokeh and golden leaves, press-photo style.',
+  'A desert highway with distant red rock formations and a deep blue sky, cinematic automotive shoot.',
+  'A quiet spring countryside lane with flowers and a stone bridge, classic motoring magazine style.',
+  'A modern underground parking garage with dramatic directional lighting, polished automotive ad composition.',
+  'A coastal cliff road at sunset with ocean below, realistic side lighting and editorial depth of field.',
+  'A blue-hour urban avenue with glass towers and subtle reflections, futuristic automotive photography.',
     ];
 
     private pickRandomBackground(): string {
@@ -2233,123 +2268,206 @@ export class CollectionManager extends BaseScriptComponent {
     }
 
     // =====================================================================
-    // IMAGE GENERATION (gpt-image-1 Image Edit with real photo)
+    // IMAGE GENERATION (gpt-image-1 Image Edit → DALL-E 3 → DALL-E 2 fallback)
     // =====================================================================
 
     /**
-     * Generates the collector card image using OpenAI Image Edit (gpt-image-1).
+     * Generates the collector card image.
      *
-     * Sends the REAL photo captured by the Spectacles camera (compressed version).
-     * The model keeps the actual vehicle and replaces ONLY the background
-     * with a professional automotive photography scene.
+     * Strategy (7 total attempts):
+     *   Phase 1 — gpt-image-1 Image Edit (3 attempts): sends the real photo,
+     *             replaces background with an automotive scene.
+     *   Phase 2 — DALL-E 3 Generate (2 attempts): text-only prompt describing
+     *             the vehicle, much lighter payload, avoids proxy payload limits.
+     *   Phase 3 — DALL-E 2 Generate (2 attempts): last resort, smallest payload.
      *
-     * Retry strategy:
-     *   - 5 attempts: gpt-image-1 (x3) then dall-e-2 fallback (x2)
-     *   - Increasing delay between attempts (2s, 3s, 4s, 5s)
+     * Increasing delay between attempts: 2s, 3s, 4s, 5s, 6s, 7s.
+     * If all fail, a friendly proxy-error message is shown on the card.
      */
     private async generateVehicleCardImage(
         data: SavedVehicleData,
         onProgress?: (attempt: number, total: number, phase: string) => void
     ): Promise<Texture> {
-        if (!this.lastCapturedBase64 || this.lastCapturedBase64.length === 0) {
-            print('CollectionManager: [IMG-EDIT] No captured photo available — cannot create card');
-            if (this.onShowDescription) this.onShowDescription(t('no_captured_photo'));
-            if (this.onHideDescriptionAfterDelay) this.onHideDescriptionAfterDelay(5.0);
-            throw new Error('No captured photo available');
-        }
-
-        print('CollectionManager: [IMG-EDIT] START — base64 length = ' + this.lastCapturedBase64.length
-            + ' (~' + Math.round((this.lastCapturedBase64.length * 0.75) / 1024) + ' KB)');
+        const photoB64 = this.lastCapturedBase64;
+        const hasPhoto = photoB64 && photoB64.length > 0;
 
         const bgScene = this.pickRandomBackground();
-        const editPrompt = 'Keep the vehicle in the foreground exactly as it appears in the photo — '
-    + 'MANDATORY LICENSE PLATE SAFETY: Do not reproduce any real license plate text. '
-    + 'Replace all visible license plates with generic white plates. '
-    + 'The main vehicle plate must read exactly "DGNS" in a bold geometric sans-serif style similar to Futura Bold, centered and legible. '
-    + 'No other plate characters or numbers may remain anywhere in the image. '            
-    + 'MANDATORY FRAMING: The entire vehicle must be fully inside the frame (front/rear bumpers, roofline, all wheels, and mirrors visible). '
-    + 'Do not crop or cut off any part of the car. Keep approximately 8–12% margin around the whole vehicle on all sides. '
-    + 'If necessary, reframe/zoom out to ensure full-car visibility while preserving true vehicle proportions and perspective.';
-    + 'preserve body shape, paint, scratches, dents, dirt, and all non-plate details faithfully. '
-    + 'Replace ONLY the background with a professional automotive photography scene: '
-    + bgScene + ' '
-    + 'Sharp focus on the car, cinematic depth of field on the background, natural lighting, magazine quality. '
-        let imageBytes: Uint8Array;
-        try {
-            imageBytes = Base64.decode(this.lastCapturedBase64);
-            print('CollectionManager: [IMG-EDIT] Base64.decode OK — '
-                + imageBytes.length + ' bytes (' + Math.round(imageBytes.length / 1024) + ' KB)');
-        } catch (decodeErr) {
-            print('CollectionManager: [IMG-EDIT] ERROR Base64.decode failed: ' + decodeErr);
-            throw new Error('Base64 decode failed: ' + String(decodeErr).substring(0, 100));
+
+        // Prompt for Image Edit (gpt-image-1)
+       const editPrompt =
+  'Replace the license plate text with "DGNS". '
+  + 'Keep the car realistic and consistent with the original image. '
+  + 'Do not change anything else in the scene.';
+
+        // Prompt for DALL-E Generate (text-only, no photo)
+        // We give as much detail as possible so DALL-E renders the EXACT generation/era,
+        // not a generic or modern version of the same model name.
+        const vehicleName = data.brand_model || 'car';
+        const vehicleYear  = data.year  ? data.year  : '';
+        const vehicleType  = data.type  ? data.type  : '';
+        const rarityLabel  = data.rarity_label ? data.rarity_label : '';
+        const topSpeed     = data.top_speed     ? 'top speed stat ' + data.top_speed + '/5' : '';
+
+        // Build a concise but precise vehicle description for DALL-E
+        let vehicleDesc = vehicleYear ? vehicleYear + ' ' + vehicleName : vehicleName;
+        if (vehicleType) vehicleDesc += ', ' + vehicleType;
+
+        // Era hint helps DALL-E pick the right generation (crucial for multi-gen models)
+        let eraHint = '';
+        if (vehicleYear) {
+            const yr = parseInt(vehicleYear, 10);
+            if (!isNaN(yr)) {
+                if (yr < 1970)      eraHint = 'classic vintage era styling, chrome details, round headlights of the ' + vehicleYear + 's. ';
+                else if (yr < 1980) eraHint = '1970s muscle/sport era design language, period-correct details. ';
+                else if (yr < 1990) eraHint = '1980s boxy angular design, era-correct trim and wheels. ';
+                else if (yr < 1995) eraHint = 'early 1990s design, period-correct bumpers, wheels, and interior glimpse. ';
+                else if (yr < 2000) eraHint = 'mid-to-late 1990s styling, correct generation body panels and headlights. ';
+                else if (yr < 2005) eraHint = 'early 2000s design language, correct bumper and light cluster for that year. ';
+                else if (yr < 2010) eraHint = 'mid-2000s generation body style. ';
+                else if (yr < 2015) eraHint = 'early 2010s generation, correct facelift details. ';
+                else if (yr < 2020) eraHint = 'mid-2010s generation styling. ';
+                else                eraHint = 'modern current-generation design. ';
+            }
         }
 
-        const attempts: Array<{ model: string; size: string }> = [
-            { model: 'gpt-image-1', size: '1024x1024' },
-            { model: 'gpt-image-1', size: '1024x1024' },
-            { model: 'gpt-image-1', size: '1536x1024' },
-            { model: 'gpt-image-1', size: '1024x1024' },
-            { model: 'gpt-image-1', size: '1024x1024' },
-        ];
+        const generatePrompt =
+  'Premium automotive collector card photo: a ' + vehicleDesc + '. '
++ 'IMPORTANT: render the exact ' + (vehicleYear || '') + ' generation of this vehicle, not a newer or older version. '
++ eraHint
++ 'Full vehicle visible, centered, shot from a 3/4 front angle. '
++ 'Background scene: ' + bgScene + ' '
++ 'Photorealistic, sharp subject, soft cinematic background blur, premium automotive magazine look. '
++ 'Clean license plate displaying "DGNS" in bold italic sans-serif. '
++ 'No text overlays, no watermarks.';
 
-        let response: any;
-        let lastError = '';
+        print('CollectionManager: [IMG] DALL-E prompt preview: ' + generatePrompt.substring(0, 200));
+
+        // Decode photo bytes once (only needed for Phase 1)
+        let imageBytes: Uint8Array | null = null;
+        if (hasPhoto) {
+            try {
+                imageBytes = Base64.decode(photoB64);
+                print('CollectionManager: [IMG] Photo decoded — '
+                    + imageBytes.length + ' bytes (' + Math.round(imageBytes.length / 1024) + ' KB)');
+            } catch (decodeErr) {
+                print('CollectionManager: [IMG] Base64.decode failed — skipping Phase 1: ' + decodeErr);
+                imageBytes = null;
+            }
+        }
+
+        type AttemptDef = { phase: string; model: string; size: string; useEdit: boolean };
+        const attempts: AttemptDef[] = [];
+
+        if (this.useDalle3ByDefault) {
+            // DALL-E 3 first (Inspector checkbox enabled) — skips gpt-image-1 proxy issues
+            attempts.push({ phase: 'dalle3', model: 'dall-e-3', size: '1024x1024', useEdit: false });
+            attempts.push({ phase: 'dalle3', model: 'dall-e-3', size: '1024x1024', useEdit: false });
+            attempts.push({ phase: 'dalle3', model: 'dall-e-3', size: '1024x1024', useEdit: false });
+            // DALL-E 2 as last resort
+            attempts.push({ phase: 'dalle2', model: 'dall-e-2', size: '512x512',   useEdit: false });
+            attempts.push({ phase: 'dalle2', model: 'dall-e-2', size: '512x512',   useEdit: false });
+        } else {
+            // Phase 1: gpt-image-1 Image Edit (only if we have a photo)
+            if (imageBytes) {
+                attempts.push({ phase: 'edit',   model: 'gpt-image-1', size: '1024x1024', useEdit: true });
+                attempts.push({ phase: 'edit',   model: 'gpt-image-1', size: '1024x1024', useEdit: true });
+                attempts.push({ phase: 'edit',   model: 'gpt-image-1', size: '1024x1024', useEdit: true });
+            }
+            // Phase 2: DALL-E 3 Generate (text-only fallback)
+            attempts.push({ phase: 'dalle3', model: 'dall-e-3', size: '1024x1024', useEdit: false });
+            attempts.push({ phase: 'dalle3', model: 'dall-e-3', size: '1024x1024', useEdit: false });
+            // Phase 3: DALL-E 2 Generate (last resort)
+            attempts.push({ phase: 'dalle2', model: 'dall-e-2', size: '512x512',   useEdit: false });
+            attempts.push({ phase: 'dalle2', model: 'dall-e-2', size: '512x512',   useEdit: false });
+        }
+
         const totalAttempts = attempts.length;
+        let lastError = '';
+        let lastPhase = '';
+        const statusCb = this.onShowCardStatus || this.onShowAnimatedDescription || this.onShowDescription;
 
         for (let i = 0; i < attempts.length; i++) {
-            const { model, size } = attempts[i];
+            const { phase, model, size, useEdit } = attempts[i];
             const attempt = i + 1;
+            lastPhase = phase;
             if (onProgress) onProgress(attempt, totalAttempts, 'requesting');
 
-            try {
-                print('CollectionManager: [IMG-EDIT] Attempt ' + attempt + '/' + attempts.length
-                    + ' — model=' + model + ', size=' + size + ', input=' + Math.round(imageBytes.length / 1024) + 'KB');
+            const phaseLabel = useEdit
+                ? 'IMG-EDIT'
+                : ('DALL-E ' + (model === 'dall-e-3' ? '3' : '2'));
 
-                const statusCb = this.onShowCardStatus || this.onShowAnimatedDescription || this.onShowDescription;
+            try {
+                print('CollectionManager: [' + phaseLabel + '] Attempt ' + attempt + '/' + totalAttempts
+                    + ' — model=' + model + ', size=' + size
+                    + (useEdit ? ', input=' + Math.round((imageBytes!).length / 1024) + 'KB' : ', text-only'));
+
                 if (statusCb) {
-                    statusCb(tf('generating_card_n', { n: attempt, total: attempts.length }) + '...');
+                    const label = useEdit
+                        ? 'AI Photo Edit'
+                        : ('DALL-E ' + (model === 'dall-e-3' ? '3' : '2') + ' Fallback');
+                    statusCb(label + ' — ' + tf('generating_card_n', { n: attempt, total: totalAttempts }) + '...');
                 }
 
-                response = await OpenAI.imagesEdit({
-                    image: imageBytes,
-                    prompt: editPrompt,
-                    model: model,
-                    n: 1,
-                    size: size,
-                });
+                let response: any;
+                if (useEdit) {
+                    response = await OpenAI.imagesEdit({
+                        image: imageBytes!,
+                        prompt: editPrompt,
+                        model: model,
+                        n: 1,
+                        size: size,
+                    });
+                } else {
+                    response = await OpenAI.imagesGenerate({
+                        prompt: generatePrompt,
+                        model: model,
+                        n: 1,
+                        size: size,
+                        response_format: 'b64_json',
+                    });
+                }
 
-                print('CollectionManager: [IMG-EDIT] Attempt ' + attempt + ' SUCCESS (model=' + model
-                    + ') — data count = ' + (response?.data?.length || 0));
-
+                print('CollectionManager: [' + phaseLabel + '] Attempt ' + attempt + ' SUCCESS'
+                    + ' — data count = ' + (response?.data?.length || 0));
                 return this.extractTextureFromResponse(response);
 
             } catch (err) {
-                // Capture as much detail as possible from the error
                 let errDetail = '';
                 if (typeof err === 'string') {
-                    errDetail = err.length > 0 ? err : '(empty string error)';
+                    errDetail = err.length > 0 ? err : '(empty string)';
                 } else if (err && typeof err === 'object') {
                     errDetail = (err as any).message || (err as any).error || JSON.stringify(err);
-                    if (!errDetail || errDetail === '{}') errDetail = '(empty object error — proxy likely rejected payload)';
+                    if (!errDetail || errDetail === '{}') errDetail = '(empty object — proxy likely rejected payload)';
                 } else {
                     errDetail = String(err) || '(unknown error)';
                 }
                 lastError = errDetail;
 
-                print('CollectionManager: [IMG-EDIT] Attempt ' + attempt + '/' + attempts.length
+                print('CollectionManager: [' + phaseLabel + '] Attempt ' + attempt + '/' + totalAttempts
                     + ' FAILED (model=' + model + '): ' + errDetail.substring(0, 400));
 
                 if (i < attempts.length - 1) {
                     const delaySec = 2 + i;
                     if (onProgress) onProgress(attempt, totalAttempts, 'retry in ' + delaySec + 's');
-                    print('CollectionManager: [IMG-EDIT] Waiting ' + delaySec + 's before retry...');
+                    print('CollectionManager: [IMG] Waiting ' + delaySec + 's before retry...');
                     await this.delay(delaySec);
                 }
             }
         }
 
-        print('CollectionManager: [IMG-EDIT] ALL ' + attempts.length + ' ATTEMPTS FAILED — ' + lastError.substring(0, 400));
-        throw new Error('Image edit failed after ' + attempts.length + ' attempts: ' + lastError.substring(0, 200));
+        // All attempts exhausted — build a human-readable error message
+        const isProxyError = lastError.toLowerCase().indexOf('proxy') >= 0
+            || lastError.toLowerCase().indexOf('500') >= 0
+            || lastError.toLowerCase().indexOf('internal') >= 0;
+        const friendlyMsg = isProxyError
+            ? 'Sorry — OpenAI proxy error (500). Image could not be generated. Tap "Generate" to retry.'
+            : 'Image generation failed (' + lastPhase + '): ' + lastError.substring(0, 100);
+
+        print('CollectionManager: [IMG] ALL ' + totalAttempts + ' ATTEMPTS FAILED — ' + lastError.substring(0, 400));
+        if (statusCb) statusCb(friendlyMsg);
+        if (this.onHideCardStatus) this.onHideCardStatus(8.0);
+
+        throw new Error(friendlyMsg);
     }
 
     /**
@@ -2481,7 +2599,11 @@ export class CollectionManager extends BaseScriptComponent {
                 dateScanned: v.dateScanned || '',
                 cityScanned: v.cityScanned || '',
             }));
-            store.putString(this.STORAGE_KEY, JSON.stringify(serializable));
+            const json = JSON.stringify(serializable);
+            store.putString(this.STORAGE_KEY, json);
+            // Backup written immediately after — if main write is truncated by a hard
+            // sleep/kill, the backup from the previous successful save is still intact.
+            store.putString(this.STORAGE_KEY_BACKUP, json);
             print('CollectionManager: Saved ' + serializable.length + ' vehicles');
         } catch (e) {
             print('CollectionManager: Save error: ' + e);
@@ -2490,11 +2612,35 @@ export class CollectionManager extends BaseScriptComponent {
 
     private loadCollectionFromStorage(): void {
         try {
-            const jsonString = global.persistentStorageSystem.store.getString(this.STORAGE_KEY);
-            if (!jsonString || jsonString.length === 0) return;
+            const store = global.persistentStorageSystem.store;
 
-            const parsed = JSON.parse(jsonString) as SavedVehicleData[];
-            if (!Array.isArray(parsed) || parsed.length === 0) return;
+            // Try main key first, then backup if main is missing or truncated.
+            const tryParse = (key: string, label: string): SavedVehicleData[] | null => {
+                try {
+                    const s = store.getString(key);
+                    if (!s || s.length === 0) return null;
+                    const trimmed = s.trim();
+                    // A truncated write won't end with ']' — catch it before JSON.parse throws
+                    if (!trimmed.startsWith('[') || !trimmed.endsWith(']')) {
+                        print('CollectionManager: ' + label + ' looks truncated — skipping');
+                        return null;
+                    }
+                    const result = JSON.parse(trimmed) as SavedVehicleData[];
+                    if (!Array.isArray(result)) return null;
+                    print('CollectionManager: ' + label + ' OK — ' + result.length + ' vehicles');
+                    return result;
+                } catch (e) {
+                    print('CollectionManager: ' + label + ' parse error: ' + e);
+                    return null;
+                }
+            };
+
+            let parsed = tryParse(this.STORAGE_KEY, 'Main');
+            if (!parsed) {
+                print('CollectionManager: Falling back to backup storage...');
+                parsed = tryParse(this.STORAGE_KEY_BACKUP, 'Backup');
+            }
+            if (!parsed || parsed.length === 0) return;
 
             this.savedVehicles = parsed;
 
@@ -2513,7 +2659,6 @@ export class CollectionManager extends BaseScriptComponent {
                     print('CollectionManager: Retroactive serial for ' + v.brand_model + ': ' + v.serial);
                 }
                 if (!v.dateScanned || v.dateScanned.length === 0) {
-                    // Derive date from savedAt timestamp
                     v.dateScanned = v.savedAt ? formatScanDate(v.savedAt) : '';
                     needsResave = true;
                 }
@@ -2540,8 +2685,12 @@ export class CollectionManager extends BaseScriptComponent {
                     if (this.cardInteraction) {
                         this.cardInteraction.hookCardFrameEvents(cardObj, this.collectionCardObjects.length - 1);
                     }
+
                     if (vehicleData.imageGenerated && vehicleData.brand_model && vehicleData.savedAt) {
                         this.loadCardImageFromStorage(vehicleData.brand_model, vehicleData.savedAt, cardObj);
+                    } else if (!vehicleData.imageGenerated && vehicleData.serial && vehicleData.savedAt) {
+                        // Restore raw photo into RAM so "Generate Image" button works this session
+                        this.loadRawPhotoFromStorage(vehicleData.serial, vehicleData.savedAt);
                     }
                 }
             }
@@ -2734,6 +2883,15 @@ export class CollectionManager extends BaseScriptComponent {
             cardTransform.setWorldScale(new vec3(s, s, s));
 
             if (t >= 1.0) {
+                // Reparent card from revealParent to collectionRoot so it appears
+                // correctly when the collection is opened (without requiring a restart).
+                this.ensureCollectionRoot();
+                if (this.collectionRoot) {
+                    const cs = this.cardInteraction ? this.cardInteraction.collectionCardScale : 0.18;
+                    cardObj.setParent(this.collectionRoot);
+                    cardObj.getTransform().setLocalPosition(vec3.zero());
+                    cardObj.getTransform().setLocalScale(new vec3(cs, cs, cs));
+                }
                 cardObj.enabled = false;
                 this.isRevealAnimating = false;
                 if (this.revealAnimEvent) {

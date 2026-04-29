@@ -109,6 +109,9 @@
     - NODE_7_DROPLIST_ITEM 0
     - ENABLE_TEXTURE_TRANSFORM
     - ENABLE_BASE_TEXTURE_TRANSFORM
+    - ENABLE_NORMALMAP
+    - NODE_8_DROPLIST_ITEM 0
+    - ENABLE_METALLIC_ROUGHNESS_TEX
   BlendMode: PremultipliedAlphaAuto
   Properties:
     PreviewEnabled:

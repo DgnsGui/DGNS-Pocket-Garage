@@ -47,6 +47,7 @@
     saveButton: false
     shareCollectionButton: false
     shareConfirmationText: false
+    useDalle3ByDefault: false
     verticalCardPrefab: false
   ScriptTypesHidden:
     {}
@@ -79,6 +80,7 @@
       brandLogoLoader: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       cardInteraction: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
       maxCollectionSize: !<float> 25.000000
+      useDalle3ByDefault: false
   ScriptTypes:
     -
       {}
@@ -105,3 +107,4 @@
     - '// @input AssignableType brandLogoLoader {"hint":"BrandLogoLoader script reference (for loading logos onto collector cards)"}'
     - '// @input AssignableType_1 cardInteraction {"hint":"CardInteraction script reference (handles grab/release, auto-rotation, lerp)"}'
     - '// @input float maxCollectionSize = 25 {"hint":"Maximum number of cards in collection. Default: 25. Increase for premium users."}'
+    - '// @input bool useDalle3ByDefault {"hint":"Use DALL-E 3 as primary image generator (skips gpt-image-1 Image Edit). Enable if gpt-image-1 fails with proxy errors."}'
