@@ -55,14 +55,14 @@ Users are responsible for respectful and lawful use of scanned content and cloud
 
 | Script | What it does |
 |---|---|
-| **Car_Scanner.ts** | The brain of the app — connects all the other scripts together so they work as one. |
+| **Car_Scanner.ts** | The brain of the app, connects all the other scripts together so they work as one. |
 | **VehicleScanner.ts** | Takes a photo with the Spectacles camera and asks AI (GPT-4o) to identify the vehicle in it. |
 | **VehicleCardUI.ts** | Displays the vehicle info card on screen (name, stats, rarity) and manages its loading/error states. |
 | **VehicleNarrator.ts** | Reads out a fun description of the scanned vehicle using text-to-speech and scrolling subtitles. |
 | **VehicleTypes.ts** | Defines the shared data structures (what a "vehicle" looks like in code) used by all other scripts. |
 | **CollectionManager.ts** | Saves your scanned cars, manages the rotating card carousel, and generates AI collector card images. |
 | **CardInteraction.ts** | Lets you grab, move, and swipe through your collection cards using your hands. |
-| **XPManager.ts** | Tracks your XP, level, daily streak, and prestige — and shows the animated +XP popup when you earn points. |
+| **XPManager.ts** | Tracks your XP, level, daily streak, and prestige, and shows the animated +XP popup when you earn points. |
 | **CloudManager.ts** | Syncs your garage, profile, and leaderboard score to the cloud (Supabase + Snap Cloud). |
 | **ConnectedLensManager.ts** | Handles multiplayer sessions so two players can see each other's garage and trade cards in the same space. |
 | **WelcomeManager.ts** | Shows the welcome screen at launch, lets you pick your language (FR/EN/ES) and choose Solo or Multiplayer mode. |
@@ -73,7 +73,7 @@ Users are responsible for respectful and lawful use of scanned content and cloud
 
 ## Requirements
 
-- **Lens Studio** (latest recommended)
+- **Lens Studio** (5.15 recommended)
 - **Snap Spectacles** device for deployment/testing
 - Internet access for cloud and multiplayer features
 - Valid Snap Cloud / Supabase configuration for online features
