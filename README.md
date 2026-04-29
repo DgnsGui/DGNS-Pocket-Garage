@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="icon.png" width="220"/>
+  <img width="800" height="450" alt="ezgif-550515ecb76da076" src="https://github.com/user-attachments/assets/f27dea45-2263-4322-b9b6-f58e4fa39d16" />
 </p>
 
 ---
