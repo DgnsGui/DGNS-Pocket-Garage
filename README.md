@@ -23,7 +23,7 @@ It provides a complete gameplay loop to scan vehicles in the real world, generat
 The project is intended as:
 - a **technical reference**
 - a **creative playground**
-- and a **starting point** for custom Spectacles automotive/gameified experiences
+- and a **starting point** for custom Spectacles collectible/gameified experiences
 
 Users are responsible for respectful and lawful use of scanned content and cloud features.
 
